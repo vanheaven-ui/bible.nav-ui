@@ -18,7 +18,6 @@ function App() {
   // Verse of the day state variables
   const [VoD, setVoD] = useState('');
   const [ref, setRef] = useState('');
-  console.log(VoD, ref);
 
   // Variables for books of the bible
   const [newTestament, setNewTestament] = useState([]);
@@ -33,7 +32,6 @@ function App() {
   // useEffect hook to fetch data only once when component mounts
   useEffect(() => {
     verseOfDay().then(data => {
-      console.log(data);
       setVoD(data.Output);
       setRef(`${data.Book} ${data.Chapter}:${data.Verse}`);
     });
