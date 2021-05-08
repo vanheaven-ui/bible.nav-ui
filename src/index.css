@@ -129,7 +129,7 @@ form > .form-group input {
 }
 
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 16px;
 }
 
 /* Track */
