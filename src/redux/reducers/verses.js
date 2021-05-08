@@ -1,31 +1,20 @@
-import {
-  CURRENT_USER, GET_FAVORITES, REMOVE_FAVORITE, REMOVE_USER,
-} from '../actionTypes';
+import { GET_VERSEID, GET_VERSES } from '../actionTypes';
 
-const userReducer = (state = {}, action) => {
-  console.log(state);
+const versesReducer = (state = { verses: [], id: '' }, action) => {
   switch (action.type) {
-    case CURRENT_USER:
-      return action.payload;
-    case REMOVE_USER:
-      console.log(state);
+    case GET_VERSES:
       return {
         ...state,
-        user: {},
-        jwt: '',
+        verses: action.payload,
       };
-    case GET_FAVORITES:
+    case GET_VERSEID:
       return {
         ...state,
-        favorites: action.payload,
-      };
-    case REMOVE_FAVORITE:
-      return {
-        ...state,
+        id: action.id,
       };
     default:
       return state;
   }
 };
 
-export default userReducer;
+export default versesReducer;
