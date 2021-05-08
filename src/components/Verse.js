@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { RAPID_API_BASE } from '../constants';
+import { getFavorite } from '../redux/actions';
 import '../styles/verse.css';
 
 const Verse = () => {
   // Get route parameters using useParams hook
   const { verse } = useParams();
   const [text, setText] = useState('');
+  const dispatch = useDispatch();
 
   // state variables for favorites management
   const [favoriteStatus, setFavoriteStatus] = useState(false);
@@ -77,7 +79,11 @@ const Verse = () => {
       body: JSON.stringify(favorite),
     })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => {
+        console.log(data);
+        setFavoriteStatus(!favoriteStatus);
+        dispatch(getFavorite(data.favorite));
+      })
       .catch(err => console.log(err.message));
   };
 
