@@ -17,3 +17,5 @@ export const GET_VERSEID = 'GET_VERSEID';
 export const GET_FAVORITES = 'GET_FAVORITES';
 
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
+
+export const ADD_FAVORITE = 'ADD_FAVORITE';

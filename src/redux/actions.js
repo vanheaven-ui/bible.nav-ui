@@ -1,4 +1,5 @@
 import {
+  ADD_FAVORITE,
   CURRENT_USER,
   GET_BOOK_NAME,
   GET_CHAPTERS,
@@ -71,7 +72,14 @@ const getFavorites = favorites => (
   }
 );
 
-const removeFavorite = id => (
+const getFavorite = favorite => (
+  {
+    type: ADD_FAVORITE,
+    payload: favorite,
+  }
+);
+
+const ridFavorite = id => (
   {
     type: REMOVE_FAVORITE,
     id,
@@ -88,5 +96,6 @@ export {
   removeUser,
   getVerseId,
   getFavorites,
-  removeFavorite,
+  ridFavorite,
+  getFavorite,
 };
