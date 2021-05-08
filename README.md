@@ -169,7 +169,6 @@ Give a ⭐️ if you like this project!
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -190,11 +189,9 @@ This project was completed to fulfill the final capstone requirements at [Microv
 ### Built With
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [react-bootstrap]()
-* [react-redux](https://jquery.com)
+* [bootstrap]()
+* [redux](https://jquery.com)
 * [react](https://laravel.com)
-* [react-reduz]()
-* [prop-types]()
 
 <!-- GETTING STARTED -->
 ## Getting Started
