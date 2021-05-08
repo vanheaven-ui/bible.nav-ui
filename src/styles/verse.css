@@ -1,0 +1,41 @@
+.verse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  min-height: 80vh;
+}
+
+.verse p {
+  background-color: #fff;
+  padding: 30px;
+  width: 80%;
+  border-radius: 10px;
+  color: #666;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.verse p span {
+  color: #000;
+  font-weight: 600;
+}
+
+.verse button {
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  color: #ec5200;
+  font-weight: 700;
+}
+
+.verse button:hover {
+  background-color: #ec5200;
+  color: #fff;
+}
+
+@media screen and (max-width: 575px) {
+  .verse p {
+    padding: 10px;
+  }
+}

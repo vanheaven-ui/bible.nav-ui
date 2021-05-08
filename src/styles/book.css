@@ -1,0 +1,64 @@
+.book-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px  0;
+  min-height: 80vh;
+}
+
+.book-details header {
+  padding: 0 16px;
+}
+
+.book-details header p {
+  color: #444;
+  font-weight: 500;
+}
+
+.chapter-list > button,
+.verse-list > button {
+  padding: 0 16px;
+  position: relative;
+  border: 1px solid #888;
+  border-radius: 5px;
+  margin: 0 5px 5px 0;
+  transition: all 0.5s linear;
+}
+
+.chapter-list button:hover, 
+.verse-list button:hover {
+  background-color: #ec5200;
+  color: #fff;
+  border: none;
+}
+
+.activeBtn {
+  background-color: #ec5200;
+  color: #fff;
+  border: none;
+}
+
+.chapter-list h4,
+.verse-list h5 {
+  color: #222;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.chapter-list > button::after,
+.verse-list > button::after {
+  background: #f4f4f4;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #888;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .book-details {
+    height: 100%;
+  }
+}

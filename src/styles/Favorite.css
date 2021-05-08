@@ -1,0 +1,45 @@
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.heading h2 {
+  align-self: flex-start;
+}
+
+.heading button {
+  border: none;
+  background-color: transparent;
+}
+
+article p {
+  background-color: #fff;
+  padding: 20px 30px 20px 10px;
+  width: 80%;
+  border-radius: 10px;
+  color: #666;
+  font-weight: 500;
+}
+
+.fa-trash {
+  color: red;
+  text-shadow: 1px 1px 2px #111;
+  font-size: 20px;
+}
+
+#no__favorites {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}

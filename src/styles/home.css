@@ -1,0 +1,165 @@
+.hero {
+  min-height: 85vh;
+  padding-top: 30px;
+}
+
+#left-col {
+  display: flex;
+}
+
+.left-hero {
+  align-self: center;
+}
+
+.left-hero h2 {
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 1px 2px 2px #ec5200;
+}
+
+.left-hero p {
+  color: #fff;
+}
+
+.hero-text .container {
+  height: 70vh;
+}
+
+.hero-text .container .row {
+  height: 100%;
+}
+
+.hero-heading {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero-heading small {
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  align-self: flex-end;
+}
+
+.hero-heading h2 {
+  align-self: center;
+}
+
+.hero-heading h4 {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 0;
+  text-decoration: underline;
+  align-self: center;
+  margin-bottom: 16px;
+}
+
+.verse-of-day {
+  box-shadow: 1px 2px 20px 1px #000;
+  font-style: italic;
+  font-weight: 700;
+  background-color: #ec5200;
+  padding: 16px 20px 16px 10px;
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.book-list {
+  background-color: azure;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 50px;
+}
+
+.book-list h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #666;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 24px;
+}
+
+.new button,
+.old button {
+  border: 1px solid #333;
+  padding: 0 6px;
+  margin-right: 5px;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  margin-bottom: 5px;
+}
+
+.new button:hover,
+.old button:hover {
+  background-color: rgb(236, 82, 0);
+  color: #fff;
+  border: none;
+}
+
+button[name=new],
+button[name=old] {
+  padding: 8px 22px;
+  border-radius: 5px;
+  transition: transform 0.5s ease-in-out;
+  margin-bottom: 10px;
+}
+
+button[name=new] {
+  margin-right: 5px;
+}
+
+button[name=old] {
+  margin-left: 5px;
+}
+
+button[name=new]:hover,
+button[name=old]:hover {
+  transform: scale(1.1);
+  border: 2px solid#ec5200;
+  color: #ec5200;
+}
+
+#bible-sections {
+  padding: 50px 0;
+}
+
+#navigate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.favorites-pitch {
+ text-align: center;
+ padding: 20px 30px;
+}
+
+.favorites-pitch h3 {
+  color: #fff;
+}
+
+.favorites-pitch p {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 575px) {
+  .hero-heading h4 {
+    align-self: flex-start;
+  }
+
+  button[name=old] {
+    margin-left: 0;
+  }
+
+  button[name=new] {
+    margin-right: 0;
+  }
+}
