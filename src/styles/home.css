@@ -84,6 +84,20 @@
   font-size: 24px;
 }
 
+.down-fa, 
+.right-fa {
+  color: #ec5200;
+  font-weight: 700;
+}
+
+.down-fa {
+  display: none;
+}
+
+.right-fa {
+  display: block;
+}
+
 .new button,
 .old button {
   border: 1px solid #333;
@@ -154,9 +168,17 @@ button[name=old]:hover {
   .hero-heading h4 {
     align-self: flex-start;
   }
+
+  .down-fa {
+    display: block;
+  }
+  
+  .right-fa {
+    display: none;
+  }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 320px) {
   button[name=old] {
     margin-left: 0;
   }

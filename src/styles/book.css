@@ -36,6 +36,7 @@
   background-color: #ec5200;
   color: #fff;
   border: none;
+  transform: scale(1.4);
 }
 
 .chapter-list h4,
