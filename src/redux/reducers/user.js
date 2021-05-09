@@ -35,7 +35,7 @@ const userReducer = (state = initState, action) => {
     case ADD_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites.favorites.push(action.payload),
+        favorites: { ...state.favorites, favorites: action.payload },
       };
     default:
       return state;
