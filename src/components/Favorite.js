@@ -6,11 +6,12 @@ const Favorite = ({ favorites, removeFavorite }) => (
     { favorites.length > 0 ? (favorites.map(favorite => (
       <article key={favorite.id}>
         <div className="heading">
-          <h2>
+          <h4 className="title">
             {favorite.book_name}
             <span>{favorite.chapter_num}</span>
+            <span>:</span>
             <span>{favorite.verse_num}</span>
-          </h2>
+          </h4>
           <button type="button" onClick={() => removeFavorite(favorite.id)}>
             <i className="fas fa-trash" />
           </button>
