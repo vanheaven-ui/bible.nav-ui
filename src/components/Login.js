@@ -81,9 +81,13 @@ const Login = ({ update }) => {
       .catch(err => setError(err.message));
   };
 
+  const handleClick = e => {
+    e.target.parentElement.className = 'hide';
+  };
+
   return (
     <section className="login">
-      { error && <AlertDisimissible error={error} /> }
+      { error && <AlertDisimissible error={error} handleClick={handleClick} /> }
       <h3 className="h4">Login into Bible.nav and manage your favorites</h3>
       <form onSubmit={e => handleSubmit(e)}>
         <div className="form-group">
