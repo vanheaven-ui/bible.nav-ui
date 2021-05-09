@@ -1,5 +1,4 @@
 .navbar {
-  /* background-color: #1f5156; */
   background-color: rgba(0, 0, 0, 0.5);
   height: 80px;
   display: flex;
@@ -8,7 +7,7 @@
   font-size: 1.2rem;
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 300;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -60,6 +59,7 @@
   height: 100%;
   border-bottom: 3px solid transparent;
 }
+
 .fa-code {
   margin-left: 1rem;
 }
@@ -74,7 +74,7 @@
   color: #fff;
 }
 
-.nav-item:after {
+.nav-item::after {
   content: "";
   display: block;
   height: 3px;
@@ -87,14 +87,14 @@
   color: #fff;
 }
 
-.nav-item:hover:after {
+.nav-item:hover::after {
   width: 100%;
-  background: #EC5200;
+  background: #ec5200;
 }
 
 .nav-item .active {
-  color: #EC5200;
-  border: 1px solid #EC5200;
+  color: #ec5200;
+  border: 1px solid #ec5200;
 }
 
 .nav-icon {
@@ -106,7 +106,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-top: 1pxsolid #fff;
+    border-top: 1px solid #fff;
     position: absolute;
     top: 80px;
     left: -110%;
@@ -116,10 +116,11 @@
 
   .nav-menu.active {
     background: rgba(0, 0, 0, 0.8);
-    left: 0px;
+    left: 0;
     opacity: 1;
     transition: all 0.5s ease;
-    z-index: 1;
+    z-index: 300;
+    padding-left: 0;
   }
 
   .nav-menu.active li:first-child {
@@ -128,9 +129,10 @@
   }
 
   .nav-item .active {
-    color: #EC5200;
+    color: #ec5200;
     border: none;
   }
+
   .nav-links {
     padding: 1.5rem;
     width: 100%;

@@ -25,7 +25,7 @@
   transition: all 0.5s linear;
 }
 
-.chapter-list button:hover, 
+.chapter-list button:hover,
 .verse-list button:hover {
   background-color: #ec5200;
   color: #fff;

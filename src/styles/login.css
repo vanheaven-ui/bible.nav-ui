@@ -20,13 +20,3 @@
   color: #fff;
   font-weight: 500;
 }
-
-@media screen and (max_width: 768px) {
-  .login > form {
-    width: 70%;
-  }
-  
-  .form-group > input {
-    width: 100%;
-  }
-}

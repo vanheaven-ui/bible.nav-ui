@@ -51,7 +51,6 @@
   color: #fff;
   font-weight: 700;
   margin-top: 30px;
-  margin-bottom: 0;
   text-decoration: underline;
   align-self: center;
   margin-bottom: 16px;
@@ -84,7 +83,7 @@
   font-size: 24px;
 }
 
-.down-fa, 
+.down-fa,
 .right-fa {
   color: #ec5200;
   font-weight: 700;
@@ -150,8 +149,8 @@ button[name=old]:hover {
 }
 
 .favorites-pitch {
- text-align: center;
- padding: 20px 30px;
+  text-align: center;
+  padding: 20px 30px;
 }
 
 .favorites-pitch h3 {
@@ -176,7 +175,7 @@ button[name=old]:hover {
   .down-fa {
     display: block;
   }
-  
+
   .right-fa {
     display: none;
   }
