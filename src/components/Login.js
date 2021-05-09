@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import { useLastLocation } from 'react-router-last-location';
 import PropTypes from 'prop-types';
+import ReactLoading from 'react-loading';
 import { getCurrentUser, getFavorites } from '../redux/actions';
 import '../styles/login.css';
 import fetchFavorites from '../services/fetchFavorites';
@@ -104,7 +105,12 @@ const Login = ({ update }) => {
 
         <div className="actions">
           { !signingin && <button type="submit" className="block-btn">Login</button> }
-          { signingin && <button type="button" disabled className="block-btn">Logging in...</button> }
+          { signingin && (
+          <button type="button" disabled className="block-btn" style={{ display: 'flex' }}>
+            Logging in
+            <ReactLoading type="bubbles" color="#fff" width="30px" height="20px" />
+          </button>
+          ) }
         </div>
       </form>
       <div className="other-action">

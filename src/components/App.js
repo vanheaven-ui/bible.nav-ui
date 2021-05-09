@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+import ReactLoading from 'react-loading';
 import { BASE_URL, BOOKS_URL, dateOptions } from '../constants';
 import { getBookName, getChapters } from '../redux/actions';
 import fetchData from '../services/fetchData';
@@ -11,6 +12,9 @@ import '../styles/home.css';
 function App() {
   // useHistory hook to route the different components
   const hist = useHistory();
+
+  // variable to manage loading
+  const [isLoading, setIsLoading] = useState();
 
   // useDispatch hook to disptach actions to the Redux store
   const dispatch = useDispatch();
@@ -31,7 +35,9 @@ function App() {
 
   // useEffect hook to fetch data only once when component mounts
   useEffect(() => {
+    setIsLoading(true);
     verseOfDay().then(data => {
+      setIsLoading(false);
       setVoD(data.Output);
       setRef(`${data.Book} ${data.Chapter}:${data.Verse}`);
     });
@@ -95,7 +101,10 @@ function App() {
                     <h4>VERSE OF THE DAY:</h4>
                     <h2>{ref}</h2>
                   </div>
-                  <p className="verse-of-day">{VoD}</p>
+                  <div className="verse-section">
+                    { isLoading && <ReactLoading type="bubbles" color="#fff" width="100px" height="100px" /> }
+                    { !isLoading && <p className="verse-of-day">{VoD}</p> }
+                  </div>
                 </Col>
               </Row>
             </Container>
