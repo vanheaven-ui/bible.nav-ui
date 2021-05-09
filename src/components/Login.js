@@ -9,10 +9,12 @@ import ReactLoading from 'react-loading';
 import { getCurrentUser, getFavorites } from '../redux/actions';
 import '../styles/login.css';
 import fetchFavorites from '../services/fetchFavorites';
+import AlertDisimissible from './AlertDissimissible';
 
 const Login = ({ update }) => {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
+  const [error, setError] = useState(null);
 
   // state variables to manage password type
   const [passwordType, setPasswordType] = useState('password');
@@ -76,11 +78,12 @@ const Login = ({ update }) => {
           hist.push('/');
         }
       })
-      .catch(err => console.log(err.message));
+      .catch(err => setError(err.message));
   };
 
   return (
     <section className="login">
+      { error && <AlertDisimissible error={error} /> }
       <h3 className="h4">Login into Bible.nav and manage your favorites</h3>
       <form onSubmit={e => handleSubmit(e)}>
         <div className="form-group">

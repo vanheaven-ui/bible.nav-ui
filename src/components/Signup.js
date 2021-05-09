@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import '../styles/signup.css';
+import AlertDisimissible from './AlertDissimissible';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordAgain, setPasswordAgain] = useState('');
+  const [error, setError] = useState(null);
 
   // state variables to manage password type
   const [passwordType, setPasswordType] = useState('password');
@@ -45,11 +47,14 @@ const Signup = () => {
         if (res.ok) {
           hist.push('/login');
         }
-      });
+        throw Error('Check your entry and try again');
+      })
+      .catch(err => setError(err.message));
   };
 
   return (
     <section className="signup">
+      { error && <AlertDisimissible error={error} /> }
       <h3 className="h4">Register here to have Bible.nav priviledges</h3>
       <form onSubmit={e => handleSubmit(e)}>
         <div className="form-group">
