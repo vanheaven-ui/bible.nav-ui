@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/vanheaven-ui/bible.nav-ui">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="src/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Bible.nav</h3>
@@ -31,13 +31,13 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#setup">Setup</a></li>
+        <li><a href="#installation">Installations</a></li>
+        <li><a href="#run">Run</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#author">Author</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
@@ -51,7 +51,7 @@ This project was completed to fulfill the final capstone requirements at [Microv
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Below is a list of the tools used to complete this project.
 * [bootstrap](https://react-bootstrap.github.io/)
 * [redux](https://redux.js.org/)
 * [react](https://reactjs.org/)
@@ -62,17 +62,15 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ensure you have the followinf running in your local environment.
+Ensure you have the following running in your local environment.
 * npm
   ```sh
   npm install npm@latest -g
   ```
-* nodeJS
-
 * NodeJs
-  ```sh
+  <br>
+
   [visit](https://nodejs.org/en/download/)
-  ```
 
 ### 🔨 Setup
 
@@ -101,6 +99,7 @@ With the installations above complete, you are set to locally use the code. Foll
 Jest and React Testing Library were used to test the code herein.
 To run the tests, simply type:
 - `npm test` or `npm run test` in the terminal and hit enter. This will run the npm test script
+
 ## ✒️ Author <a name = "author"></a>
 
 👤 **Mworekwa Ezekiel**
