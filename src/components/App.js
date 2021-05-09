@@ -107,7 +107,8 @@ function App() {
             <Row>
               <Col xs={12} md={6} id="navigate">
                 <h4>Let us navigate the sections of the bible</h4>
-                <i className="fas fa-caret-right fa-3x" />
+                <i className="fas fa-caret-right fa-3x right-fa" />
+                <i className="fas fa-caret-down fa-3x down-fa" />
               </Col>
               <Col xs={12} md={6}>
                 { !showOld && (
