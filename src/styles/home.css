@@ -43,7 +43,7 @@
 }
 
 .hero-heading h2 {
-  align-self: center;
+  align-self: flex-start;
 }
 
 .hero-heading h4 {
@@ -167,6 +167,10 @@ button[name=old]:hover {
 @media screen and (max-width: 575px) {
   .hero-heading h4 {
     align-self: flex-start;
+  }
+
+  .hero-heading h2 {
+    align-self: center;
   }
 
   .down-fa {

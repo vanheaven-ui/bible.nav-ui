@@ -123,6 +123,7 @@ form > .form-group input {
   font-size: 16px;
   padding: 0 0 0 10px;
   line-height: 25px;
+  margin-bottom: 10px;
 }
 
 .other-action {
