@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
+import '../styles/alert.css';
 
-const AlertDisimissible = ({ error }) => {
-  const handleClick = e => {
-    e.target.parentElement.remove();
-  };
-
+const AlertDisimissible = ({ error, handleClick }) => {
+  console.log(handleClick);
   return (
-    <p>
+    <p className="show">
       {error}
       <button type="button" onClick={e => handleClick(e)}>X</button>
     </p>
@@ -15,6 +13,7 @@ const AlertDisimissible = ({ error }) => {
 
 AlertDisimissible.propTypes = {
   error: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default AlertDisimissible;
