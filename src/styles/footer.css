@@ -12,6 +12,14 @@
 
 .footer-logo {
   color: #ec5200;
+  text-shadow: 1px 1px 2px #111;
+  font-size: 32px;
+  transition: all 0.5s ease;
+}
+
+.footer-logo:hover {
+  color: #111;
+  text-shadow: 1px 1px 2px #ec5200;
 }
 
 .social-links {
