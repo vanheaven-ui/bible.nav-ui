@@ -10,6 +10,7 @@ import Login from './Login';
 import Signup from './Signup';
 import Verse from './Verse';
 import FavoritesList from '../containers/FavoritesList';
+import NotFound from './404NotFound';
 
 const Routes = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -44,6 +45,9 @@ const Routes = () => {
           </Route>
           <Route path="/favorites">
             <FavoritesList />
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
         <Footer />
