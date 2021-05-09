@@ -12,6 +12,7 @@ const FavoritesList = () => {
   const dispatch = useDispatch();
 
   const { user, jwt: token, favorites } = useSelector(state => state.user);
+  console.log(favorites);
 
   const removeFavorite = id => {
     console.log(id);
@@ -38,7 +39,9 @@ const FavoritesList = () => {
     <section className={styles.favorites}>
       <h2>Your Favorites</h2>
       <div className={styles.favorite__list}>
-        <Favorite favorites={favorites.favorites} removeFavorite={removeFavorite} />
+        { favorites && (
+          <Favorite favorites={favorites.favorites} removeFavorite={removeFavorite} />
+        )}
       </div>
     </section>
   );
