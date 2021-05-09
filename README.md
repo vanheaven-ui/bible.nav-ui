@@ -52,9 +52,9 @@ This project was completed to fulfill the final capstone requirements at [Microv
 ### Built With
 
 Below is a list of the tools used to complete this project.
-* [bootstrap](https://react-bootstrap.github.io/)
-* [redux](https://redux.js.org/)
-* [react](https://reactjs.org/)
+* [Bootstrap](https://react-bootstrap.github.io/)
+* [Redux](https://redux.js.org/)
+* [React](https://reactjs.org/)
 
 ## Getting Started
 

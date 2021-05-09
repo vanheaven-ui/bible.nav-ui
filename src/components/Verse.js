@@ -66,6 +66,22 @@ const Verse = () => {
       .catch(err => console.error(err));
   }, []);
 
+  const handleNext = () => {
+    fetch(`${RAPID_API_BASE}?Verse=${(parseInt(verse, 10) + 1).toString()}&chapter=${chapterNum}&Book=${bookName}`, {
+      method: 'GET',
+      headers: {
+        'x-rapidapi-key': '36b571e37emshf64ca4aee9ccebcp1eeaefjsn46401cd9bc4a',
+        'x-rapidapi-host': 'ajith-holy-bible.p.rapidapi.com',
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        setText(data.Output);
+        setScripture(data);
+      })
+      .catch(err => console.error(err));
+  };
+
   // Add to favorites on click
   const addFavorite = () => {
     fetch(`https://biblenav-api.herokuapp.com/api/v1/users/${userId}/favorites`, {
@@ -107,6 +123,9 @@ const Verse = () => {
         <span>{verse}</span>
         {' '}
         {text}
+        <button type="button" className="move" onClick={() => handleNext()}>
+          <i className="fas fa-angle-right" />
+        </button>
       </p>
       { !favoriteStatus && (
         <button
