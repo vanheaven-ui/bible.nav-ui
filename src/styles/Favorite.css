@@ -17,6 +17,21 @@ article {
   align-self: flex-start;
 }
 
+.title {
+  font-size: 28px;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+.title span {
+  color: #fff;
+  font-size: 24px;
+  text-shadow: 1px 1px 2px #111;
+}
+
+.title span:first-child {
+  margin-left: 10px;
+}
+
 .heading button {
   border: none;
   background-color: transparent;
