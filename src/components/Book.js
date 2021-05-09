@@ -12,12 +12,13 @@ import { getVerseNumbers } from '../redux/selectors';
 import fetchData from '../services/fetchData';
 
 const Book = ({ login }) => {
-  const [click, setClick] = useState(false);
+  //  state variable to manage actie button class
+  // const [click, setClick] = useState(false);
+
   // Get chapters from Redux store using useSelector hook
   const chapters = useSelector(state => state.chapter);
   const user = useSelector(state => state.user);
   const bookName = useSelector(state => state.name);
-  const noOfChapters = 10;
 
   // useParams to get the ID of the Chapter
   const { id } = useParams();
@@ -33,11 +34,11 @@ const Book = ({ login }) => {
 
   // Method to load verses on Click
   const loadVerse = e => {
+    e.target.className = e.target.className === 'activeBtn' ? '' : 'activeBtn';
     dispatch(getChapterNum(e.target.textContent));
     dispatch(getChapterID(e.target.id));
     fetchData(chaptersURL(e.target.id))
       .then(data => {
-        setClick(!click);
         setVerses(getVerseNumbers(data.data.content));
         dispatch(getVerses(data.data.content));
       });
@@ -64,7 +65,7 @@ const Book = ({ login }) => {
         <p>
           Enjoy the
           {' '}
-          {noOfChapters}
+          {chapters.length}
           {' '}
           chapters of this book. Click on each chapter number to get the verses.
         </p>
@@ -78,7 +79,6 @@ const Book = ({ login }) => {
             id={chapter.id}
             key={chapter.id}
             onClick={e => loadVerse(e)}
-            className={click ? 'activeBtn' : ''}
           >
             {chapter.number}
           </button>
