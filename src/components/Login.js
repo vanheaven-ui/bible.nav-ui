@@ -64,7 +64,9 @@ const Login = ({ update }) => {
         dispatch(getCurrentUser(data));
         const { jwt: token, user } = data;
         fetchFavorites(user.id, token)
-          .then(data => dispatch(getFavorites(data)))
+          .then(data => {
+            dispatch(getFavorites(data.favorites));
+          })
           .catch(err => console.log(err.message));
         update(true);
         if (lastLocation.pathname !== '' && lastLocation.pathname.indexOf('books') !== -1) {
