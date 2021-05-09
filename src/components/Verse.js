@@ -38,7 +38,7 @@ const Verse = () => {
   // Get verse chosen from external api
   useEffect(() => {
     if (favorites) {
-      favorites.favorites.forEach(obj => {
+      favorites.forEach(obj => {
         if (obj.book_name === favorite.book_name
             && favorite.chapter_num === obj.chapter_num
             && favorite.verse_num === obj.verse_num
@@ -64,7 +64,7 @@ const Verse = () => {
         setScripture(data);
       })
       .catch(err => console.error(err));
-  }, [favoriteStatus]);
+  }, []);
 
   // Add to favorites on click
   const addFavorite = () => {

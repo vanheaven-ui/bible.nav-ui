@@ -40,7 +40,7 @@ const FavoritesList = () => {
       <h2>Your Favorites</h2>
       <div className={styles.favorite__list}>
         { favorites && (
-          <Favorite favorites={favorites.favorites} removeFavorite={removeFavorite} />
+          <Favorite favorites={favorites} removeFavorite={removeFavorite} />
         )}
       </div>
     </section>

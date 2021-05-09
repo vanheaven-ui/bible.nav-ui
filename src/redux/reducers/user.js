@@ -6,12 +6,10 @@ import {
 const initState = {
   user: {},
   jwt: '',
-  favorites: { favorites: [] },
+  favorites: [],
 };
 
 const userReducer = (state = initState, action) => {
-  console.log(state);
-  console.log(state);
   switch (action.type) {
     case CURRENT_USER:
       return action.payload;
@@ -30,12 +28,13 @@ const userReducer = (state = initState, action) => {
     case REMOVE_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites.favorites.filter(favorite => favorite.id !== action.id),
+        favorites: state.favorites.filter(favorite => favorite.id !== action.id),
       };
     case ADD_FAVORITE:
+      console.log(action.payload);
       return {
         ...state,
-        favorites: { ...state.favorites, favorites: action.payload },
+        favorites: [...state.favorites, action.payload],
       };
     default:
       return state;
