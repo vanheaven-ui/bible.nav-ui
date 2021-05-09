@@ -62,7 +62,9 @@ const Login = ({ update }) => {
       .then(data => {
         dispatch(getCurrentUser(data));
         const { jwt: token, user } = data;
-        fetchFavorites(user.id, token).then(data => dispatch(getFavorites(data)));
+        fetchFavorites(user.id, token)
+          .then(data => dispatch(getFavorites(data)))
+          .catch(err => console.log(err.message));
         update(true);
         if (lastLocation.pathname !== '' && lastLocation.pathname.indexOf('books') !== -1) {
           const bookID = lastLocation.pathname.split('/')[2];
@@ -102,7 +104,7 @@ const Login = ({ update }) => {
 
         <div className="actions">
           { !signingin && <button type="submit" className="block-btn">Login</button> }
-          { signingin && <button type="button" disabled className="block-btn">Logging in..</button> }
+          { signingin && <button type="button" disabled className="block-btn">Logging in...</button> }
         </div>
       </form>
       <div className="other-action">
