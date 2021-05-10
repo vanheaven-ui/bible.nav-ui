@@ -52,9 +52,13 @@ const Signup = () => {
       .catch(err => setError(err.message));
   };
 
+  const handleClick = e => {
+    e.target.parentElement.className = 'hide';
+  };
+
   return (
     <section className="signup">
-      { error && <AlertDisimissible error={error} /> }
+      { error && <AlertDisimissible error={error} handleClick={handleClick} /> }
       <h3 className="h4">Register here to have Bible.nav priviledges</h3>
       <form onSubmit={e => handleSubmit(e)}>
         <div className="form-group">
