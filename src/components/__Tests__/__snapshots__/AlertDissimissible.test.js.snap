@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertDissimissible component does not change unexpectedly 1`] = `
+<p
+  className="show"
+>
+  
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    X
+  </button>
+</p>
+`;

@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component does not change unexpectedly 1`] = `
+<div
+  className="App"
+>
+  <section
+    className="hero"
+  >
+    <div
+      className="hero-text"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-6 col-12 order-md-first order-last"
+            id="left-col"
+          >
+            <div
+              className="left-hero"
+            >
+              <h2>
+                 Navigating the Bible simplified
+              </h2>
+              <p>
+                Your favorite bible verse is a login away
+              </p>
+              <button
+                className="orange-button"
+                type="button"
+              >
+                <a
+                  href="/signup"
+                  onClick={[Function]}
+                >
+                  START HERE
+                </a>
+              </button>
+            </div>
+          </div>
+          <div
+            className="col-md-6 col-12 order-md-last order-first"
+          >
+            <div
+              className="hero-heading"
+            >
+              <small>
+                Monday, May 10, 2021
+              </small>
+              <h4>
+                VERSE OF THE DAY:
+              </h4>
+              <h2>
+                
+              </h2>
+            </div>
+            <div
+              className="verse-section"
+            >
+              <p
+                className="verse-of-day"
+              >
+                
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    className="book-list"
+  >
+    <h2>
+      GET BOOKS OF THE BIBLE
+    </h2>
+    <div
+      className="container-fluid"
+      id="bible-sections"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-md-6 col-12"
+          id="navigate"
+        >
+          <h4>
+            Let us navigate the sections of the bible
+          </h4>
+          <i
+            className="fas fa-caret-right fa-3x right-fa"
+          />
+          <i
+            className="fas fa-caret-down fa-3x down-fa"
+          />
+        </div>
+        <div
+          className="col-md-6 col-12"
+        >
+          <button
+            name="new"
+            onClick={[Function]}
+            type="button"
+          >
+            NEW TESTAMENT
+          </button>
+          <button
+            name="old"
+            onClick={[Function]}
+            type="button"
+          >
+            OLD TESTAMENT
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    className="favorites-pitch"
+  >
+    <h3>
+      CREATE YOUR FAVORITES
+    </h3>
+    <p>
+      Have your favorites in one place by registering or signing in
+    </p>
+    <div
+      className="buttons"
+    >
+      <button
+        className="orange-button"
+        type="button"
+      >
+        <a
+          href="/signup"
+          onClick={[Function]}
+        >
+          REGISTER
+        </a>
+      </button>
+      <button
+        className="outline-btn"
+        type="button"
+      >
+        <a
+          href="/login"
+          onClick={[Function]}
+        >
+          LOGIN
+        </a>
+      </button>
+    </div>
+  </section>
+</div>
+`;

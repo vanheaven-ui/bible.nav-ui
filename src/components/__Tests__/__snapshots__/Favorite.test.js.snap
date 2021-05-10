@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorite Component test does not change unexpectedly 1`] = `
+<p
+  id="no__favorites"
+>
+  No favorites yet
+</p>
+`;

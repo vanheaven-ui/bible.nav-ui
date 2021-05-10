@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not change unexpectedly 1`] = `
+<section
+  className="not-found"
+>
+  <div
+    className="overlay-notfound"
+  />
+</section>
+`;
