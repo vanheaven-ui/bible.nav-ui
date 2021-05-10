@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { removeUser } from '../../redux/actions';
 import '../../styles/Navbar.css';
+import logo from '../../images/logo1.png';
 
 const LoggedInNavbar = ({ status }) => {
   // Use useDispatch hook to send actions to redux store
@@ -26,7 +27,10 @@ const LoggedInNavbar = ({ status }) => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <Link to="/" className="nav-logo">Bible.nav</Link>
+        <Link to="/" className="nav-logo">
+          <img src={logo} alt="logo" width="50px" height="50px" />
+          Bible.nav
+        </Link>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item profile">
             <span>

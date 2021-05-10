@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import '../../styles/footer.css';
+import logo from '../../images/logo1.png';
 
 const Footer = () => (
   <footer id="footer">
     <div className="footer-wrap">
       <h3 className="footer-logo">
+        <img src={logo} alt="logo" width="50px" height="50px" />
         <Link to="/">Bible.nav</Link>
       </h3>
       <p className="address">jdkfljsdfjdslfds</p>
