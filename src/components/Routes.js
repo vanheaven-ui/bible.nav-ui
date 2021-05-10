@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { LastLocationProvider } from 'react-router-last-location';
-import App from './App';
+import Home from './Home';
 import Book from './Book';
 import Footer from './common/Footer';
 import Navbar from './common/Navbar';
@@ -29,7 +29,7 @@ const Routes = () => {
         </header>
         <Switch>
           <Route exact path="/">
-            <App />
+            <Home />
           </Route>
           <Route path="/signup">
             <Signup />
