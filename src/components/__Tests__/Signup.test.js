@@ -32,5 +32,5 @@ it('displays loading message on login click', () => {
   );
   fireEvent.click(screen.getByText('Register'));
   expect(screen.getByRole('button')).toHaveAttribute('disabled');
-  expect(screen.getByRole('button')).toHaveTextContent('Registering...');
+  expect(screen.getByRole('button')).toHaveTextContent('Registering');
 });

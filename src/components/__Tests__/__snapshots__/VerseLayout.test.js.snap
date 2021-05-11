@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VerseLayout Component does not change unexpectedly 1`] = `
+<div
+  className="verse-layout-wrap"
+>
+  <h2>
+    John
+  </h2>
+  <h3>
+    Chapter:
+     
+    1
+     
+    Verse:
+     
+    1
+     
+  </h3>
+  <p>
+    <span>
+      1
+    </span>
+     
+    In the begining...
+    <button
+      className="move"
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        className="fas fa-angle-right"
+      />
+    </button>
+  </p>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Add to favourites
+    <i
+      className="fas fa-star"
+      style={
+        Object {
+          "color": "#e27c08",
+          "marginLeft": 10,
+        }
+      }
+    />
+  </button>
+</div>
+`;

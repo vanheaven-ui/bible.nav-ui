@@ -8,11 +8,9 @@ import rootDiv from '../../testHelper';
 import store from '../../redux/store';
 import '@testing-library/jest-dom';
 import Home from '../Home';
-import { dateOptions } from '../../constants';
 
 describe('Home Component', () => {
-  let dateMock = new Date();
-  dateMock = jest.fn(() => 1620644512642);
+  global.Date.now = jest.fn(() => 1620718496066);
   it('renders without crashing', () => {
     ReactDOM.render(
       <Provider store={store}><Router><Home /></Router></Provider>, rootDiv(),

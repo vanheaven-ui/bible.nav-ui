@@ -9,13 +9,19 @@ import '@testing-library/jest-dom';
 import Routes from '../Routes';
 import store from '../../redux/store';
 
-it('renders without crashing', () => {
-  ReactDOM.render(<Provider store={store}><Routes /></Provider>, rootDiv());
-});
+describe('Routes Component', () => {
+  beforeAll(() => {
+    global.Date.now = jest.fn(() => 1620718496066);
+  });
 
-it('does not change unexpectedly', () => {
-  const tree = renderer.create(
-    <Provider store={store}><Routes /></Provider>,
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  it('renders without crashing', () => {
+    ReactDOM.render(<Provider store={store}><Routes /></Provider>, rootDiv());
+  });
+  
+  it('does not change unexpectedly', () => {
+    const tree = renderer.create(
+      <Provider store={store}><Routes /></Provider>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });  
 });
