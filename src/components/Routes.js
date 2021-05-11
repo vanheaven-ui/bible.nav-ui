@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { LastLocationProvider } from 'react-router-last-location';
 import Home from './Home';
-import Book from './Book';
+import Book from '../containers/Book';
 import Footer from './common/Footer';
 import Navbar from './common/Navbar';
 import LoggedInNavbar from './common/NavbarLogin';
 import Login from './Login';
 import Signup from './Signup';
-import Verse from './Verse';
+import Verse from '../containers/Verse';
 import FavoritesList from '../containers/FavoritesList';
 import NotFound from './404NotFound';
 
