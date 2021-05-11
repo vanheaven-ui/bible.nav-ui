@@ -9,7 +9,11 @@ const Footer = () => (
         <img src={logo} alt="logo" width="50px" height="50px" />
         <Link to="/">Bible.nav</Link>
       </h3>
-      <p className="address">jdkfljsdfjdslfds</p>
+      <p className="address">
+        Plot 3, Speke Road street, Kampala Rd 3
+        <br />
+        Kampala, Uganda.
+      </p>
       <ul className="social-links">
         <li>
           <a href="https://www.linkedin.com/in/vanheaven/">
