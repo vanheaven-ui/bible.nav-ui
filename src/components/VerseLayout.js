@@ -26,7 +26,7 @@ const VerseLayout = ({
           <span>{params.verseID}</span>
           {' '}
           {params.text}
-          <button type="button" className="move" onClick={() => handleNext()}>
+          <button type="button" className="move" onClick={e => handleNext(e)}>
             <i className="fas fa-angle-right" />
           </button>
         </>

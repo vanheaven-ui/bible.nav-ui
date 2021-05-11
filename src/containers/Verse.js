@@ -69,7 +69,8 @@ const Verse = () => {
       .catch(err => console.error(err));
   }, []);
 
-  const handleNext = () => {
+  const handleNext = e => {
+    e.target.parentElement.setAttribute('style', 'cursor: not-allowed;');
     setVerseID((parseInt(verse, 10) + 1).toString());
     fetch(
       `${RAPID_API_BASE}?Verse=${verseID}&chapter=${chapterNum}&Book=${bookName}`,
