@@ -33,6 +33,11 @@
   color: #ec5200;
 }
 
+.verse-layout-wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .verse p span {
   color: #000;
   font-weight: 600;
