@@ -8,14 +8,14 @@ import '../styles/verse.css';
 
 const Verse = () => {
   // Get route parameters using useParams hook
-  let { verse } = useParams();
+  const { verse } = useParams();
   const [text, setText] = useState('');
   const dispatch = useDispatch();
+  const [verseID, setVerseID] = useState(verse);
+  console.log(verseID);
 
   // state variables for favorites management
   const [favoriteStatus, setFavoriteStatus] = useState(false);
-
-  console.log(favoriteStatus);
 
   // stte variables to manange verse
   const [scripture, setScripture] = useState({});
@@ -25,8 +25,6 @@ const Verse = () => {
     verse_num: scripture.Verse,
     verse: scripture.Output,
   };
-
-  console.log(favorite);
 
   // Grab the chapterId and the data from Redux store
   const { chapterNum } = useSelector(state => state.chapterId);
@@ -55,7 +53,7 @@ const Verse = () => {
       });
     }
 
-    fetch(`${RAPID_API_BASE}?Verse=${verse}&chapter=${chapterNum}&Book=${bookName}`, {
+    fetch(`${RAPID_API_BASE}?Verse=${verseID}&chapter=${chapterNum}&Book=${bookName}`, {
       method: 'GET',
       headers: {
         'x-rapidapi-key': '36b571e37emshf64ca4aee9ccebcp1eeaefjsn46401cd9bc4a',
@@ -72,8 +70,9 @@ const Verse = () => {
   }, []);
 
   const handleNext = () => {
+    setVerseID((parseInt(verse, 10) + 1).toString());
     fetch(
-      `${RAPID_API_BASE}?Verse=${verse = (parseInt(verse, 10) + 1).toString()}&chapter=${chapterNum}&Book=${bookName}`,
+      `${RAPID_API_BASE}?Verse=${verseID}&chapter=${chapterNum}&Book=${bookName}`,
       {
         method: 'GET',
         headers: {
@@ -115,7 +114,7 @@ const Verse = () => {
     <section className="verse">
       <VerseLayout
         params={{
-          bookName, chapterNum, text, verse,
+          bookName, chapterNum, text, verse, verseID,
         }}
         handleNext={handleNext}
         addFavorite={addFavorite}
