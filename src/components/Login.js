@@ -121,7 +121,7 @@ const Login = ({ update }) => {
             type="button"
             disabled
             className="block-btn"
-            style={{ display: 'flex', justifyContent: 'center' }}
+            style={{ display: 'flex', justifyContent: 'center', cursor: 'not-allowed' }}
           >
             Logging in
             <ReactLoading type="bubbles" color="#fff" width="30px" height="20px" />
