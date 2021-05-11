@@ -113,9 +113,16 @@ const Login = ({ update }) => {
         </div>
 
         <div className="actions">
-          { !signingin && <button type="submit" className="block-btn">Login</button> }
+          { !signingin && (
+            <button type="submit" className="block-btn">Login</button>
+          )}
           { signingin && (
-          <button type="button" disabled className="block-btn" style={{ display: 'flex' }}>
+          <button
+            type="button"
+            disabled
+            className="block-btn"
+            style={{ display: 'flex', justifyContent: 'center' }}
+          >
             Logging in
             <ReactLoading type="bubbles" color="#fff" width="30px" height="20px" />
           </button>

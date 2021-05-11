@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import ReactLoading from 'react-loading';
 import '../styles/signup.css';
 import AlertDisimissible from './AlertDissimissible';
 
@@ -100,7 +101,17 @@ const Signup = () => {
         </div>
         <div className="actions">
           { !registering && <button type="submit" className="block-btn">Register</button> }
-          { registering && <button type="button" disabled className="block-btn">Registering...</button> }
+          { registering && (
+            <button
+              type="button"
+              disabled
+              className="block-btn"
+              style={{ display: 'flex', justifyContent: 'center' }}
+            >
+              Registering
+              <ReactLoading type="bubbles" color="#fff" width="30px" height="20px" />
+            </button>
+          )}
         </div>
       </form>
       <div className="other-action">
