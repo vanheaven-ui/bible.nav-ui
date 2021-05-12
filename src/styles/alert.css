@@ -1,3 +1,11 @@
 .hide {
   display: none;
 }
+
+.display {
+  display: flex
+}
+
+.fa-exclamation-triangle {
+  font-size: 18px;
+}

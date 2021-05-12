@@ -47,8 +47,8 @@
   font-size: 30px;
 }
 
-.copy-right {
+.copyright {
   font-size: 90%;
-  font-weight: 700;
-  color: #444;
+  color: #888;
+  font-weight: 900;
 }
