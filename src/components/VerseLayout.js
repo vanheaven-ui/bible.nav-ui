@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import ReactLoading from 'react-loading';
 
 const VerseLayout = ({
   params, handleNext, addFavorite, favoriteStatus, isLoading,
@@ -20,7 +19,7 @@ const VerseLayout = ({
       )}
     </h3>
     <div>
-      { isLoading && <ReactLoading type="bubbles" color="#ec5200" width="30px" height="20px" /> }
+      { isLoading && <p>Loading...</p> }
       { !isLoading && (
         <>
           <span>{params.verseID}</span>
