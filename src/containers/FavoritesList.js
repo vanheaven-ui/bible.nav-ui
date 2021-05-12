@@ -1,18 +1,14 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Favorite from '../components/Favorite';
-import { ridFavorite } from '../redux/actions';
+import { getCurrentUser, getFavorites, ridFavorite } from '../redux/actions';
 import styles from '../styles/favorites.module.css';
 
-const FavoritesList = () => {
-  // const [favorites, setFavorites] = useState([]);
-  // console.log(favorites.length);
-  const hist = useHistory();
+const FavoritesList = ({ currentUser, login }) => {
   const dispatch = useDispatch();
 
   const { user, jwt: token, favorites } = useSelector(state => state.user);
-  console.log(favorites);
 
   const removeFavorite = id => {
     console.log(id);
@@ -31,13 +27,17 @@ const FavoritesList = () => {
   };
 
   useEffect(() => {
-    if (!user) {
-      hist.push('/');
+    const favorites = JSON.parse(localStorage.getItem('favorites'));
+    if (currentUser && favorites) {
+      dispatch(getCurrentUser(currentUser));
+      dispatch(getFavorites(favorites));
+      login(true);
     }
   }, []);
+
   return (
     <section className={styles.favorites}>
-      <h2>Your Favorites</h2>
+      <h2>Your Favorite Verses</h2>
       <div className={styles.favorite__list}>
         { favorites && (
           <Favorite favorites={favorites} removeFavorite={removeFavorite} />
@@ -45,6 +45,15 @@ const FavoritesList = () => {
       </div>
     </section>
   );
+};
+
+FavoritesList.propTypes = {
+  login: PropTypes.func.isRequired,
+  currentUser: PropTypes.instanceOf(Object),
+};
+
+FavoritesList.defaultProps = {
+  currentUser: {},
 };
 
 export default FavoritesList;

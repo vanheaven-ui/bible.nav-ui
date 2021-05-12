@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import VerseLayout from '../components/VerseLayout';
 import { RAPID_API_BASE } from '../constants';
-import { getFavorite } from '../redux/actions';
+import { getCurrentUser, getFavorite, getFavorites } from '../redux/actions';
 import '../styles/verse.css';
 
-const Verse = () => {
+const Verse = ({ currentUser, login }) => {
   // Get route parameters using useParams hook
   const { verse } = useParams();
   const [text, setText] = useState('');
@@ -29,15 +30,25 @@ const Verse = () => {
   // Grab the chapterId and the data from Redux store
   const { chapterNum } = useSelector(state => state.chapterId);
   const bookName = useSelector(state => state.name);
-  const { jwt: token, user, favorites } = useSelector(state => state.user);
+  const { user, favorites } = useSelector(state => state.user);
+  console.log(user);
+  const { jwt: token, user: currUser } = user;
   let userId;
-  user ? userId = user.id : userId = ''; // eslint-disable-line
+  currUser ? userId = currUser.id : userId = ''; // eslint-disable-line
   console.log(userId);
 
   const [isLoading, setIsLoading] = useState(false);
+  const hist = useHistory();
 
   // Get verse chosen from external api
   useEffect(() => {
+    const favortes = JSON.parse(localStorage.getItem('favorites'));
+    if (currentUser) {
+      dispatch(getCurrentUser(currentUser));
+      dispatch(getFavorites(favortes));
+      login(true);
+    }
+
     setIsLoading(true);
     if (favorites) {
       favorites.forEach(obj => {
@@ -70,6 +81,7 @@ const Verse = () => {
   }, []);
 
   const handleNext = e => {
+    setIsLoading(true);
     e.target.parentElement.setAttribute('style', 'cursor: not-allowed;');
     setVerseID((parseInt(verse, 10) + 1).toString());
     fetch(
@@ -86,6 +98,7 @@ const Verse = () => {
       .then(data => {
         setText(data.Output);
         setScripture(data);
+        setIsLoading(false);
       })
       .catch(err => console.error(err));
   };
@@ -113,17 +126,36 @@ const Verse = () => {
 
   return (
     <section className="verse">
-      <VerseLayout
-        params={{
-          bookName, chapterNum, text, verse, verseID,
-        }}
-        handleNext={handleNext}
-        addFavorite={addFavorite}
-        favoriteStatus={favoriteStatus}
-        isLoading={isLoading}
-      />
+      { !bookName && (
+        <button className="go-home verse-go" type="button" onClick={() => hist.push('/')}>
+          <i className="far fa-hand-point-left" />
+          {' '}
+          {' '}
+          Click to go home and retrieve the book first
+        </button>
+      )}
+      { bookName && (
+        <VerseLayout
+          params={{
+            bookName, chapterNum, text, verse, verseID,
+          }}
+          handleNext={handleNext}
+          addFavorite={addFavorite}
+          favoriteStatus={favoriteStatus}
+          isLoading={isLoading}
+        />
+      )}
     </section>
   );
+};
+
+Verse.propTypes = {
+  login: PropTypes.func.isRequired,
+  currentUser: PropTypes.instanceOf(Object),
+};
+
+Verse.defaultProps = {
+  currentUser: {},
 };
 
 export default Verse;
