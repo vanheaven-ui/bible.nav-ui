@@ -9,7 +9,7 @@
   <p align="center">
     A single page application to aid navigating the bible for specific verses.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/vanheaven-ui/bible.nav-ui/pull/1"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://guarded-springs-59282.herokuapp.com/">View Demo</a>
