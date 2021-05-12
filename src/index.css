@@ -203,6 +203,11 @@ form > .form-group input {
 
 }
 
+.show-hide small {
+  font-weight: 700;
+  color: #333;
+}
+
 @media screen and (max-width: 768px) {
   .login > form,
   .signup > form {
@@ -217,5 +222,6 @@ form > .form-group input {
 @media screen and (max-width: 575px) {
   .show {
     width: 80%;
+    font-size: 16px;
   }
 }
