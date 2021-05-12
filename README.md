@@ -47,7 +47,8 @@
 ![Bible.nav Screen Shot](screenshot/screenshot.png)
 
 
-This project was completed to fulfill the final capstone requirements at [Microverse Inc](). The application in this project was built to aid navigating the bible for specific verses, an idea that was inspired by the find your house concept. The design of the application herein was inspired by [behance stuff]().
+This project was completed to fulfill the final capstone requirements at [Microverse Inc](). The application in this project was built to aid navigating the bible for specific verses, an idea that was inspired by the find your house concept. The design of the application herein was inspired by [Alexey Savitskiy on Behance](https://www.behance.net/gallery/37706679/Circle-(Landing-page-Dashboard-Mobile-App)).
+The backend for this application was built with Rails and can be found [here](https://github.com/vanheaven-ui/bible.nav-api)
 
 ### Built With
 
