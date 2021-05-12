@@ -2,14 +2,17 @@ import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import ReactLoading from 'react-loading';
 import { BASE_URL, BOOKS_URL, dateOptions } from '../constants';
-import { getBookName, getChapters } from '../redux/actions';
+import {
+  getBookName, getChapters, getCurrentUser, getFavorites,
+} from '../redux/actions';
 import fetchData from '../services/fetchData';
 import verseOfDay from '../services/verseOfDay';
 import '../styles/home.css';
 
-const Home = () => {
+const Home = ({ currentUser, login }) => {
   // useHistory hook to route the different components
   const hist = useHistory();
 
@@ -33,8 +36,16 @@ const Home = () => {
   // variables to show chapters
   const [showChapters, setShowChapters] = useState(false);
 
+  // local storage
+  const favorites = JSON.parse(localStorage.getItem('favorites'));
+
   // useEffect hook to fetch data only once when component mounts
   useEffect(() => {
+    if (currentUser && favorites) {
+      dispatch(getCurrentUser(currentUser));
+      dispatch(getFavorites(favorites));
+      login(true);
+    }
     setIsLoading(true);
     verseOfDay().then(data => {
       setIsLoading(false);
@@ -171,6 +182,15 @@ const Home = () => {
       </div>
     </>
   );
+};
+
+Home.propTypes = {
+  currentUser: PropTypes.instanceOf(Object),
+  login: PropTypes.func.isRequired,
+};
+
+Home.defaultProps = {
+  currentUser: {},
 };
 
 export default Home;

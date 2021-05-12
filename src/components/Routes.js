@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Route, Switch,
+} from 'react-router-dom';
 import { LastLocationProvider } from 'react-router-last-location';
 import Home from './Home';
 import Book from '../containers/Book';
@@ -14,37 +16,35 @@ import NotFound from './404NotFound';
 
 const Routes = () => {
   const [loggedIn, setLoggedIn] = useState(false);
-
-  const handleLogin = () => {
-    setLoggedIn(!loggedIn);
-  };
+  console.log(loggedIn);
+  const currUser = JSON.parse(localStorage.getItem('user'));
 
   return (
     <Router>
       <LastLocationProvider>
         <div className="dark-overlay" />
         <header>
-          { loggedIn && <LoggedInNavbar status={handleLogin} /> }
+          { loggedIn && <LoggedInNavbar currentUser={currUser} login={setLoggedIn} /> }
           { !loggedIn && <Navbar /> }
         </header>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home currentUser={currUser} login={setLoggedIn} />
           </Route>
           <Route path="/signup">
             <Signup />
           </Route>
           <Route path="/login">
-            <Login update={handleLogin} />
+            <Login update={setLoggedIn} />
           </Route>
           <Route exact path="/books/:id">
-            <Book login={loggedIn} />
+            <Book currentUser={currUser} login={setLoggedIn} />
           </Route>
           <Route path="/books/:id/verses/:verse">
-            <Verse />
+            <Verse currentUser={currUser} login={setLoggedIn} />
           </Route>
           <Route path="/favorites">
-            <FavoritesList />
+            <FavoritesList currentUser={currUser} login={setLoggedIn} />
           </Route>
           <Route path="*">
             <NotFound />

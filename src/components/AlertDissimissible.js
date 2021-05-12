@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import '../styles/alert.css';
 
 const AlertDisimissible = ({ error, handleClick }) => {
-  console.log(handleClick);
+  console.log(error);
   return (
     <p className="show">
       {error}

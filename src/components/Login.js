@@ -63,14 +63,17 @@ const Login = ({ update }) => {
         throw Error('Username or password is invalid');
       })
       .then(data => {
-        dispatch(getCurrentUser(data));
+        update(true);
+        localStorage.setItem('user', JSON.stringify(data));
+        dispatch(getCurrentUser(JSON.parse(localStorage.getItem('user'))));
+        console.log(JSON.parse(localStorage.getItem('user')));
         const { jwt: token, user } = data;
         fetchFavorites(user.id, token)
           .then(data => {
-            dispatch(getFavorites(data.favorites));
+            localStorage.setItem('favorites', JSON.stringify(data.favorites));
+            dispatch(getFavorites(JSON.parse(localStorage.getItem('favorites'))));
           })
           .catch(err => console.log(err.message));
-        update(true);
         if (lastLocation.pathname !== '' && lastLocation.pathname.indexOf('books') !== -1) {
           const bookID = lastLocation.pathname.split('/')[2];
           hist.push(`/books/${bookID}/verses/${verseID}`);

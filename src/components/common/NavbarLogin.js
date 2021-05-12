@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
@@ -6,7 +6,7 @@ import { removeUser } from '../../redux/actions';
 import '../../styles/Navbar.css';
 import logo from '../../images/logo1.png';
 
-const LoggedInNavbar = ({ status }) => {
+const LoggedInNavbar = ({ currentUser, login }) => {
   // Use useDispatch hook to send actions to redux store
   const dispatch = useDispatch();
 
@@ -14,12 +14,13 @@ const LoggedInNavbar = ({ status }) => {
   const [click, setClick] = useState();
 
   // get current user from redux store
-  const currentUser = useSelector(state => state.user);
+  // const { user: currentUser } = useSelector(state => state.user);
 
   // function to handle login status
   const handleLogout = () => {
+    localStorage.clear();
     dispatch(removeUser);
-    status(false);
+    login(false);
   };
 
   const handleClick = () => setClick(!click);
@@ -36,7 +37,7 @@ const LoggedInNavbar = ({ status }) => {
             <span>
               <small>~/</small>
               {' '}
-              {currentUser.user.username}
+              {currentUser && currentUser.user.username}
             </span>
           </li>
           <li className="nav-item">
@@ -55,7 +56,12 @@ const LoggedInNavbar = ({ status }) => {
 };
 
 LoggedInNavbar.propTypes = {
-  status: PropTypes.func.isRequired,
+  currentUser: PropTypes.instanceOf(Object),
+  login: PropTypes.func.isRequired,
+};
+
+LoggedInNavbar.defaultProps = {
+  currentUser: {},
 };
 
 export default LoggedInNavbar;

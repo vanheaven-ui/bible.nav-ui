@@ -17,11 +17,11 @@ describe('Routes Component', () => {
   it('renders without crashing', () => {
     ReactDOM.render(<Provider store={store}><Routes /></Provider>, rootDiv());
   });
-  
+
   it('does not change unexpectedly', () => {
     const tree = renderer.create(
       <Provider store={store}><Routes /></Provider>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
-  });  
+  });
 });

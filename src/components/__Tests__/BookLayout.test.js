@@ -15,10 +15,18 @@ describe('BookLayout Component', () => {
   const getVerse = () => '';
   const params = {
     chapters: [
-      { bibleId: "55212e3cf5d04d49-01", bookId: "MRK", id: "MRK.1", number: "1", reference: "Mark 1" },
-      { bibleId: "55212e3cf5d04d49-01", bookId: "MRK", id: "MRK.2", number: "2", reference: "Mark 2" },
-      { bibleId: "55212e3cf5d04d49-01", bookId: "MRK", id: "MRK.3", number: "3", reference: "Mark 3" },
-      { bibleId: "55212e3cf5d04d49-01", bookId: "MRK", id: "MRK.4", number: "4", reference: "Mark 4" },
+      {
+        bibleId: '55212e3cf5d04d49-01', bookId: 'MRK', id: 'MRK.1', number: '1', reference: 'Mark 1',
+      },
+      {
+        bibleId: '55212e3cf5d04d49-01', bookId: 'MRK', id: 'MRK.2', number: '2', reference: 'Mark 2',
+      },
+      {
+        bibleId: '55212e3cf5d04d49-01', bookId: 'MRK', id: 'MRK.3', number: '3', reference: 'Mark 3',
+      },
+      {
+        bibleId: '55212e3cf5d04d49-01', bookId: 'MRK', id: 'MRK.4', number: '4', reference: 'Mark 4',
+      },
     ],
     bookName: 'John',
     verses: ['1', '2', '3', '4'],
@@ -34,7 +42,7 @@ describe('BookLayout Component', () => {
 
   it('does not change unexpectedly', () => {
     const tree = renderer.create(
-      <BookLayout params={params} loadVerse={loadVerse} getVerse={getVerse} />
+      <BookLayout params={params} loadVerse={loadVerse} getVerse={getVerse} />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

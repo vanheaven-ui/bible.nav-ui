@@ -19,8 +19,8 @@ const VerseLayout = ({
         <i className="fas fa-star" style={{ color: '#e27c08', marginLeft: 10 }} />
       )}
     </h3>
-    <p>
-      { isLoading && <ReactLoading type="bubbles" color="#ec5200" width="50px" height="50px" /> }
+    <div>
+      { isLoading && <ReactLoading type="bubbles" color="#ec5200" width="30px" height="20px" /> }
       { !isLoading && (
         <>
           <span>{params.verseID}</span>
@@ -31,7 +31,7 @@ const VerseLayout = ({
           </button>
         </>
       )}
-    </p>
+    </div>
     { !favoriteStatus && (
       <button
         type="button"
