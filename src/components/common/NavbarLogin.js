@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
@@ -7,14 +7,16 @@ import '../../styles/Navbar.css';
 import logo from '../../images/logo1.png';
 
 const LoggedInNavbar = ({ currentUser, login }) => {
+  console.log(currentUser);
   // Use useDispatch hook to send actions to redux store
   const dispatch = useDispatch();
 
   // Variables to toggle navbar display
   const [click, setClick] = useState();
+  const { user: currUser } = useSelector(state => state.user.user);
+  console.log(currUser);
 
-  // get current user from redux store
-  // const { user: currentUser } = useSelector(state => state.user);
+  // useEffect(() => dispatch(getCurrentUser(currentUser)));
 
   // function to handle login status
   const handleLogout = () => {
@@ -37,7 +39,7 @@ const LoggedInNavbar = ({ currentUser, login }) => {
             <span>
               <small>~/</small>
               {' '}
-              {currentUser && currentUser.user.username}
+              {currUser && currUser.username}
             </span>
           </li>
           <li className="nav-item">
