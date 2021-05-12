@@ -16,7 +16,6 @@ const Login = ({ update }) => {
   const [username, setUsername] = useState('');
   const [error, setError] = useState('');
   const [click, setClick] = useState(false);
-  console.log(error);
 
   const [passwordType, setPasswordType] = useState('password');
 
@@ -56,7 +55,6 @@ const Login = ({ update }) => {
       .then(res => {
         setSigningin(false);
         if (res.ok) {
-          console.log('Log in successful!');
           return res.json();
         }
         throw Error('Username or password is invalid');
@@ -65,7 +63,6 @@ const Login = ({ update }) => {
         update(true);
         localStorage.setItem('user', JSON.stringify(data));
         dispatch(getCurrentUser(JSON.parse(localStorage.getItem('user'))));
-        console.log(JSON.parse(localStorage.getItem('user')));
         const { jwt: token, user } = data;
         fetchFavorites(user.id, token)
           .then(data => {

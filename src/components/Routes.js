@@ -16,7 +16,6 @@ import NotFound from './404NotFound';
 
 const Routes = () => {
   const [loggedIn, setLoggedIn] = useState(false);
-  console.log(loggedIn);
   const currUser = JSON.parse(localStorage.getItem('user'));
 
   return (

@@ -12,9 +12,6 @@ import fetchData from '../services/fetchData';
 import BookLayout from '../components/BookLayout';
 
 const Book = ({ currentUser, login }) => {
-  //  state variable to manage actie button class
-  // const [click, setClick] = useState(false);
-
   // Get chapters from Redux store using useSelector hook
   const chapters = useSelector(state => state.chapter);
   const user = JSON.parse(localStorage.getItem('user'));
@@ -43,7 +40,7 @@ const Book = ({ currentUser, login }) => {
 
   // Method to load verses on Click
   const loadVerse = e => {
-    e.target.className = e.target.className === 'activeBtn' ? '' : 'activeBtn';
+    e.target.className = 'activeBtn';
     dispatch(getChapterNum(e.target.textContent));
     dispatch(getChapterID(e.target.id));
     fetchData(chaptersURL(e.target.id))

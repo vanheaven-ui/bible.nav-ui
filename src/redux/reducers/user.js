@@ -16,7 +16,6 @@ const userReducer = (state = initState, action) => {
         user: action.payload,
       };
     case REMOVE_USER:
-      console.log(state);
       return {
         ...state,
         favorites: [],
@@ -34,7 +33,6 @@ const userReducer = (state = initState, action) => {
         favorites: state.favorites.filter(favorite => favorite.id !== action.id),
       };
     case ADD_FAVORITE:
-      console.log(action.payload);
       return {
         ...state,
         favorites: [...state.favorites, action.payload],

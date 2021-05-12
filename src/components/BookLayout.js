@@ -1,10 +1,11 @@
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-const BookLayout = ({ params, loadVerse, getVerse }) => {
-  console.log(params.chapters);
+const BookLayout = ({
+  params, loadVerse, getVerse,
+}) => {
   const chapters = params.chapters.filter(chapter => chapter.number !== 'intro');
-  console.log(typeof chapters);
+
   return (
     <div className="book-details_wrap">
       <header>
@@ -30,6 +31,7 @@ const BookLayout = ({ params, loadVerse, getVerse }) => {
             id={chapter.id}
             key={chapter.id}
             onClick={e => loadVerse(e)}
+            className=""
           >
             {chapter.number}
           </button>

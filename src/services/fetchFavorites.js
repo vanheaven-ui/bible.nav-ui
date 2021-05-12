@@ -12,7 +12,6 @@ const fetchFavorites = (userID, token) => {
       if (!res.ok) {
         throw Error('Not successful');
       }
-      console.log('Successful');
       return res.json();
     });
   return responsePromise;

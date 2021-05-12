@@ -33,7 +33,6 @@ const FavoritesList = ({ currentUser, login }) => {
       },
     })
       .then(() => {
-        console.log('Deleted!');
         dispatch(ridFavorite(id));
         setRemoving(false);
         const arr = JSON.parse(localStorage.getItem('favorites'));
