@@ -37,8 +37,8 @@
 
 .hero-heading small {
   color: #000;
+  font-size: 18px;
   font-weight: 700;
-  font-size: 16px;
   align-self: flex-end;
 }
 

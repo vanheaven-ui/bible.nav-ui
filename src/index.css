@@ -124,11 +124,11 @@ button {
 form > .form-group input {
   border-radius: 20px;
   border: 1px solid #ec5200;
-  box-shadow: 1px 2px 12px 2px #ec5200;
+  box-shadow: 1px 1px 12px 2px #ec5200;
   font-size: 16px;
   padding: 0 0 0 10px;
   line-height: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .other-action {
@@ -153,6 +153,25 @@ form > .form-group input {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(236, 82, 0, 0.5);
+}
+
+.go-home {
+  width: max-content;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 16px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-color: transparent;
+}
+
+.go-home:hover {
+  transform: translateY(20px) scale(1.5);
 }
 
 @media screen and (max-width: 768px) {

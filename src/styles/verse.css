@@ -7,18 +7,6 @@
   text-align: center;
 }
 
-.verse p {
-  background-color: #fff;
-  padding: 30px;
-  width: 80%;
-  border-radius: 10px;
-  color: #666;
-  font-weight: 500;
-  margin: 30px auto;
-  position: relative;
-  text-align: left;
-}
-
 .move {
   position: absolute;
   right: -10px;
@@ -38,7 +26,19 @@
   margin: 0 auto;
 }
 
-.verse p span {
+.verse-layout-wrap div {
+  background-color: #fff;
+  padding: 30px;
+  width: 80%;
+  border-radius: 10px;
+  color: #666;
+  font-weight: 500;
+  margin: 30px auto;
+  position: relative;
+  text-align: left;
+}
+
+.verse div span {
   color: #000;
   font-weight: 600;
 }
@@ -51,13 +51,17 @@
   font-weight: 700;
 }
 
+.verse-go {
+  color: #fff;
+}
+
 .verse button:hover {
   background-color: #ec5200;
   color: #fff;
 }
 
 @media screen and (max-width: 575px) {
-  .verse p {
+  .verse-layout-wrap div {
     padding: 10px;
   }
 }

@@ -15,6 +15,12 @@
   font-weight: 500;
 }
 
+.go-back {
+  color: #fff;
+  width: max-content;
+  border: none;
+}
+
 .chapter-list > button,
 .verse-list > button {
   padding: 0 16px;
@@ -56,6 +62,12 @@
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.go-back:hover {
+  color: #fff;
+  background-color: #ec5200;
+  text-shadow: 1px 1px 2px #000;
 }
 
 @media screen and (max-width: 768px) {
