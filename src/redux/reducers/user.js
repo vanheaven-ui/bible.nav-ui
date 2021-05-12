@@ -5,18 +5,21 @@ import {
 
 const initState = {
   user: {},
-  jwt: '',
   favorites: [],
 };
 
 const userReducer = (state = initState, action) => {
   switch (action.type) {
     case CURRENT_USER:
-      return action.payload;
+      return {
+        ...state,
+        user: action.payload,
+      };
     case REMOVE_USER:
       console.log(state);
       return {
         ...state,
+        favorites: [],
         user: {},
         jwt: '',
       };
