@@ -5,6 +5,7 @@ const AlertDisimissible = ({ error, handleClick }) => {
   console.log(error);
   return (
     <p className="show">
+      <i className="fas fa-exclamation-triangle" />
       {error}
       <button type="button" onClick={e => handleClick(e)}>X</button>
     </p>
