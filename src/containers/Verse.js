@@ -31,11 +31,9 @@ const Verse = ({ currentUser, login }) => {
   const { chapterNum } = useSelector(state => state.chapterId);
   const bookName = useSelector(state => state.name);
   const { user, favorites } = useSelector(state => state.user);
-  console.log(user);
   const { jwt: token, user: currUser } = user;
   let userId;
   currUser ? userId = currUser.id : userId = ''; // eslint-disable-line
-  console.log(userId);
 
   const [isLoading, setIsLoading] = useState(false);
   const hist = useHistory();
@@ -120,6 +118,9 @@ const Verse = ({ currentUser, login }) => {
         console.log(data);
         setFavoriteStatus(!favoriteStatus);
         dispatch(getFavorite(data.favorite));
+        const arr = JSON.parse(localStorage.getItem('favorites'));
+        arr.push(data.favorite);
+        localStorage.setItem('favorites', JSON.stringify(arr));
       })
       .catch(err => console.log(err.message));
   };

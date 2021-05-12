@@ -132,10 +132,24 @@ const Home = ({ currentUser, login }) => {
               </Col>
               <Col xs={12} md={6}>
                 { !showOld && (
-                <button type="button" name="new" onClick={e => handleClick(e)}>NEW TESTAMENT</button>
+                <button
+                  type="button"
+                  name="new"
+                  onClick={e => handleClick(e)}
+                  title="Click me!"
+                >
+                  NEW TESTAMENT
+                </button>
                 )}
                 { !showNew && (
-                <button type="button" name="old" onClick={e => handleClick(e)}>OLD TESTAMENT</button>
+                <button
+                  type="button"
+                  name="old"
+                  onClick={e => handleClick(e)}
+                  title="Click me!"
+                >
+                  OLD TESTAMENT
+                </button>
                 )}
                 { showNew && (
                 <div className="new">
