@@ -14,18 +14,17 @@ import AlertDisimissible from './AlertDissimissible';
 const Login = ({ update }) => {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('');
+  const [click, setClick] = useState(false);
+  console.log(error);
 
-  // state variables to manage password type
   const [passwordType, setPasswordType] = useState('password');
 
   const verseID = useSelector(state => state.verses.id);
-  console.log(verseID);
 
   const [signingin, setSigningin] = useState(false);
 
   const lastLocation = useLastLocation();
-  console.log(lastLocation);
 
   const hist = useHistory();
   const dispatch = useDispatch();
@@ -81,16 +80,19 @@ const Login = ({ update }) => {
           hist.push('/');
         }
       })
-      .catch(err => setError(err.message));
+      .catch(err => {
+        setError(err.message);
+        setClick(true);
+      });
   };
 
-  const handleClick = e => {
-    e.target.parentElement.className = 'hide';
+  const handleClick = () => {
+    setClick(false);
   };
 
   return (
     <section className="login">
-      { error && <AlertDisimissible error={error} handleClick={handleClick} /> }
+      { error && <AlertDisimissible error={error} handleClick={handleClick} click={click} /> }
       <h3 className="h4">Login into Bible.nav and manage your favorites</h3>
       <form onSubmit={e => handleSubmit(e)}>
         <div className="form-group">

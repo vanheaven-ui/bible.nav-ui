@@ -9,6 +9,7 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordAgain, setPasswordAgain] = useState('');
+  const [click, setClick] = useState(false);
   const [error, setError] = useState(null);
 
   // state variables to manage password type
@@ -50,16 +51,17 @@ const Signup = () => {
         }
         throw Error('Check your entry and try again');
       })
-      .catch(err => setError(err.message));
+      .catch(err => {
+        setError(err.message);
+        setClick(true);
+      });
   };
 
-  const handleClick = e => {
-    e.target.parentElement.className = 'hide';
-  };
+  const handleClick = () => setClick(false);
 
   return (
     <section className="signup">
-      { error && <AlertDisimissible error={error} handleClick={handleClick} /> }
+      { error && <AlertDisimissible error={error} handleClick={handleClick} click={click} /> }
       <h3 className="h4">Register here to have Bible.nav priviledges</h3>
       <form onSubmit={e => handleSubmit(e)}>
         <div className="form-group">
