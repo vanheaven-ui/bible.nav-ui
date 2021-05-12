@@ -6,17 +6,13 @@ import { removeUser } from '../../redux/actions';
 import '../../styles/Navbar.css';
 import logo from '../../images/logo1.png';
 
-const LoggedInNavbar = ({ currentUser, login }) => {
-  console.log(currentUser);
+const LoggedInNavbar = ({ login }) => {
   // Use useDispatch hook to send actions to redux store
   const dispatch = useDispatch();
 
   // Variables to toggle navbar display
   const [click, setClick] = useState();
   const { user: currUser } = useSelector(state => state.user.user);
-  console.log(currUser);
-
-  // useEffect(() => dispatch(getCurrentUser(currentUser)));
 
   // function to handle login status
   const handleLogout = () => {
@@ -58,12 +54,7 @@ const LoggedInNavbar = ({ currentUser, login }) => {
 };
 
 LoggedInNavbar.propTypes = {
-  currentUser: PropTypes.instanceOf(Object),
   login: PropTypes.func.isRequired,
-};
-
-LoggedInNavbar.defaultProps = {
-  currentUser: {},
 };
 
 export default LoggedInNavbar;

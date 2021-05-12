@@ -114,7 +114,7 @@ Array [
                 className="hero-heading"
               >
                 <small>
-                  Tuesday, May 11, 2021
+                  Wednesday, May 12, 2021
                 </small>
                 <h4>
                   VERSE OF THE DAY:
@@ -170,6 +170,7 @@ Array [
             <button
               name="new"
               onClick={[Function]}
+              title="Click me!"
               type="button"
             >
               NEW TESTAMENT
@@ -177,6 +178,7 @@ Array [
             <button
               name="old"
               onClick={[Function]}
+              title="Click me!"
               type="button"
             >
               OLD TESTAMENT
@@ -247,7 +249,9 @@ Array [
       <p
         className="address"
       >
-        jdkfljsdfjdslfds
+        Plot 3, Speke Road street, Kampala Rd 3
+        <br />
+        Kampala, Uganda.
       </p>
       <ul
         className="social-links"

@@ -25,7 +25,6 @@ const FavoritesList = ({ currentUser, login }) => {
 
   const removeFavorite = id => {
     setRemoving(true);
-    console.log(id);
     fetch(`https://biblenav-api.herokuapp.com/api/v1/users/${user.id}/favorites/${id}`, {
       method: 'DELETE',
       headers: {

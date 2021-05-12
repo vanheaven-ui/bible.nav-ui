@@ -7,12 +7,23 @@ import rootDiv from '../../testHelper';
 import store from '../../redux/store';
 import '@testing-library/jest-dom';
 
-// Smoke test
-it('renders without carshing', () => {
-  ReactDOM.render(<Provider store={store}><FavoritesList /></Provider>, rootDiv());
-});
+describe('FavoritesList Component', () => {
+  const login = () => true;
 
-it('renders your favorites heading', () => {
-  render(<Provider store={store}><FavoritesList /></Provider>);
-  expect(screen.getByText('Your Favorites')).toBeInTheDocument();
+  // Smoke test
+  it('renders without carshing', () => {
+    ReactDOM.render(<Provider store={store}><FavoritesList login={login} /></Provider>, rootDiv());
+  });
+
+  it('renders your favorites heading', () => {
+    render(<Provider store={store}><FavoritesList login={login} /></Provider>);
+    expect(screen.getByText('Your Favorite Verses')).toBeInTheDocument();
+  });
+
+  it('renders the correct the correct wrapper element', () => {
+    const { container } = render(
+      <Provider store={store}><FavoritesList login={login} /></Provider>,
+    );
+    expect(container.firstChild.classList.contains('favorites'));
+  });
 });

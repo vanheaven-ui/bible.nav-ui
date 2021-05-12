@@ -7,5 +7,18 @@ exports[`does not change unexpectedly 1`] = `
   <div
     className="overlay-notfound"
   />
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="fas fa-hand-point-left"
+    />
+     
+    Go Back
+  </button>
+  <p>
+    Always safe to take a step back when something is amiss
+  </p>
 </section>
 `;

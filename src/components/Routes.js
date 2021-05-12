@@ -24,7 +24,7 @@ const Routes = () => {
       <LastLocationProvider>
         <div className="dark-overlay" />
         <header>
-          { loggedIn && <LoggedInNavbar currentUser={currUser} login={setLoggedIn} /> }
+          { loggedIn && <LoggedInNavbar login={setLoggedIn} /> }
           { !loggedIn && <Navbar /> }
         </header>
         <Switch>

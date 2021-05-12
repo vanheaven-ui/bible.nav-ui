@@ -14,13 +14,10 @@ exports[`VerseLayout Component does not change unexpectedly 1`] = `
      
     Verse:
      
-    1
      
   </h3>
-  <p>
-    <span>
-      1
-    </span>
+  <div>
+    <span />
      
     In the begining...
     <button
@@ -32,7 +29,7 @@ exports[`VerseLayout Component does not change unexpectedly 1`] = `
         className="fas fa-angle-right"
       />
     </button>
-  </p>
+  </div>
   <button
     onClick={[Function]}
     type="button"

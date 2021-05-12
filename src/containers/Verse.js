@@ -13,7 +13,6 @@ const Verse = ({ currentUser, login }) => {
   const [text, setText] = useState('');
   const dispatch = useDispatch();
   const [verseID, setVerseID] = useState(verse);
-  console.log(verseID);
 
   // state variables for favorites management
   const [favoriteStatus, setFavoriteStatus] = useState(false);
@@ -55,9 +54,6 @@ const Verse = ({ currentUser, login }) => {
             && favorite.verse_num === obj.verse_num
             && favorite.verse === obj.verse) {
           setFavoriteStatus(true);
-          console.log('Forcing a false');
-          console.log('Hmm1');
-          console.log('Rerendering');
         }
       });
     }
@@ -115,7 +111,6 @@ const Verse = ({ currentUser, login }) => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         setFavoriteStatus(!favoriteStatus);
         dispatch(getFavorite(data.favorite));
         const arr = JSON.parse(localStorage.getItem('favorites'));

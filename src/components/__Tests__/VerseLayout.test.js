@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { render, screen, cleanup } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { render, cleanup } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import rootDiv from '../../testHelper';
-import store from '../../redux/store';
 import '@testing-library/jest-dom';
 import VerseLayout from '../VerseLayout';
 
