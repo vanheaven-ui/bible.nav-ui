@@ -94,6 +94,9 @@ const Home = ({ currentUser, login }) => {
     <>
       <div className="App">
         <section className="hero">
+          <p className="caret">
+            <i className="fas fa-angle-double-down" />
+          </p>
           <div className="hero-text">
             <Container>
               <Row>
