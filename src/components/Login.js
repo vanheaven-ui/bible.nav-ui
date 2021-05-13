@@ -70,7 +70,7 @@ const Login = ({ update }) => {
             dispatch(getFavorites(JSON.parse(localStorage.getItem('favorites'))));
           })
           .catch(err => console.log(err.message));
-        if (lastLocation.pathname !== '' && lastLocation.pathname.indexOf('books') !== -1) {
+        if (lastLocation && lastLocation.pathname.indexOf('books') !== -1) {
           const bookID = lastLocation.pathname.split('/')[2];
           hist.push(`/books/${bookID}/verses/${verseID}`);
         } else {
