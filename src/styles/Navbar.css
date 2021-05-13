@@ -147,7 +147,7 @@
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
+    right: -20px;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
@@ -156,5 +156,11 @@
     padding: 0 10px;
     border: none;
     transition: all 0.5s ease-out;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .nav-container {
+    margin: 0;
   }
 }
