@@ -1,6 +1,7 @@
 .hero {
   min-height: 85vh;
   padding-top: 30px;
+  position: relative;
 }
 
 #left-col {
@@ -54,6 +55,20 @@
   text-decoration: underline;
   align-self: center;
   margin-bottom: 16px;
+}
+
+@keyframes move {
+  from { transform: translateY(10px) }
+  to { trnasform: translateY(-10px) }
+}
+
+.caret {
+  position: absolute;
+  bottom: -16px;
+  left: 48.5vw;
+  font-size: 24px;
+  color: azure;
+  animation: move 1s linear 2s infinite alternate;
 }
 
 .verse-of-day {
