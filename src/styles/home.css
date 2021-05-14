@@ -58,8 +58,8 @@
 }
 
 @keyframes move {
-  from { transform: translateY(10px) }
-  to { trnasform: translateY(-10px) }
+  from { transform: translateY(13px) }
+  to { trnasform: translateY(-13px) }
 }
 
 .caret {
@@ -68,7 +68,7 @@
   left: 48.5vw;
   font-size: 24px;
   color: azure;
-  animation: move 1s linear 2s infinite alternate;
+  animation: move 1s linear 1s infinite alternate;
 }
 
 .verse-of-day {
