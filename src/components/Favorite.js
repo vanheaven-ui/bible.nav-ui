@@ -12,7 +12,10 @@ const Favorite = ({ favorites, removeFavorite }) => (
             <span>:</span>
             <span>{favorite.verse_num}</span>
           </h4>
-          <button type="button" onClick={() => removeFavorite(favorite.id)}>
+          <button
+            type="button"
+            onClick={() => removeFavorite(favorite.id)}
+          >
             <i className="fas fa-trash" />
           </button>
         </div>

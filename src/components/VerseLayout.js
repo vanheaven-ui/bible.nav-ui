@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const VerseLayout = ({
-  params, handleNext, addFavorite, favoriteStatus, isLoading,
+  params, handleNext, addFavorite, favoriteStatus, isLoading, isAdding,
 }) => (
   <div className="verse-layout-wrap">
     <h2>{`${params.bookName}`}</h2>
@@ -36,7 +36,10 @@ const VerseLayout = ({
         type="button"
         onClick={() => addFavorite()}
       >
-        Add to favourites
+        { isAdding && (
+          <span style={{ color: '#555', cursor: 'not-allowed' }}>Adding Favorite...</span>
+        )}
+        { !isAdding && <span> Add to favourites</span> }
         <i className="fas fa-star" style={{ color: '#e27c08', marginLeft: 10 }} />
       </button>
     )}
@@ -49,6 +52,7 @@ VerseLayout.propTypes = {
   handleNext: PropTypes.func.isRequired,
   favoriteStatus: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
+  isAdding: PropTypes.bool.isRequired,
 };
 
 export default VerseLayout;

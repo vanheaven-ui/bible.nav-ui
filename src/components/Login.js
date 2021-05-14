@@ -6,11 +6,9 @@ import {
 import { useLastLocation } from 'react-router-last-location';
 import PropTypes from 'prop-types';
 import ReactLoading from 'react-loading';
-// import { getCurrentUser, getFavorites } from '../redux/actions';
 import '../styles/login.css';
-// import fetchFavorites from '../services/fetchFavorites';
 import AlertDisimissible from './AlertDissimissible';
-import getFavoritesOnLogin from '../redux/actions/favorites';
+import getFavoritesOnLogin from '../redux/actions/favorites/favorites';
 
 const Login = ({ update }) => {
   const [password, setPassword] = useState('');
@@ -51,43 +49,6 @@ const Login = ({ update }) => {
     setSigningin(true);
 
     getFavoritesOnLogin(dispatch, loginParams, setSigningin, update, params);
-
-    // fetch('https://biblenav-api.herokuapp.com/api/v1/login', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(loginParams),
-    // })
-    //   .then(res => {
-    //     setSigningin(false);
-    //     if (res.ok) {
-    //       return res.json();
-    //     }
-    //     throw Error('Username or password is invalid');
-    //   })
-    //   .then(data => {
-    //     update(true);
-    //     localStorage.setItem('user', JSON.stringify(data));
-    //     dispatch(getCurrentUser(JSON.parse(localStorage.getItem('user'))));
-    //     const { jwt: token, user } = data;
-    //     fetchFavorites(user.id, token)
-    //       .then(data => {
-    //         localStorage.setItem('favorites', JSON.stringify(data.favorites));
-    //         dispatch(getFavorites(JSON.parse(localStorage.getItem('favorites'))));
-    //       })
-    //       .catch(err => console.log(err.message));
-    //     if (lastLocation && lastLocation.pathname.indexOf('books') !== -1) {
-    //       const bookID = lastLocation.pathname.split('/')[2];
-    //       hist.push(`/books/${bookID}/verses/${verseID}`);
-    //     } else {
-    //       hist.push('/');
-    //     }
-    //   })
-    //   .catch(err => {
-    //     setError(err.message);
-    //     setClick(true);
-    //   });
   };
 
   const handleClick = () => {

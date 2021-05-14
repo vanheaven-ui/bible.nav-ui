@@ -2,52 +2,32 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
-import chaptersURL from '../constants';
 import '../styles/book.css';
-import {
-  getChapterID, getChapterNum, getCurrentUser, getFavorites, getVerseId, getVerses,
-} from '../redux/actions';
-import { getVerseNumbers } from '../redux/selectors';
-import fetchData from '../services/fetchData';
 import BookLayout from '../components/BookLayout';
+import persistLogin from '../util';
+import retrieveVerses from '../redux/actions/verses/verses';
+import getVerseId from '../redux/actions/verses/verseId';
+import getChapterID from '../redux/actions/chapters/chapterID';
+import getChapterNum from '../redux/actions/chapters/chapterNum';
 
 const Book = ({ currentUser, login }) => {
-  // Get chapters from Redux store using useSelector hook
   const chapters = useSelector(state => state.chapter);
   const user = JSON.parse(localStorage.getItem('user'));
   const bookName = useSelector(state => state.name);
-
-  // useParams to get the ID of the Chapter
   const { id } = useParams();
-
-  // useDispatch to dispatch getVerses action
   const dispatch = useDispatch();
-
-  // variables to handle verses
   const [verses, setVerses] = useState([]);
-
-  // useHistory to browse to to verse page/component
   const hist = useHistory();
+  const favorites = JSON.parse(localStorage.getItem('favorites'));
 
-  useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem('favorites'));
-    if (currentUser && favorites) {
-      dispatch(getCurrentUser(currentUser));
-      dispatch(getFavorites(favorites));
-      login(true);
-    }
-  });
+  useEffect(() => persistLogin(dispatch, currentUser, favorites, login), []);
 
   // Method to load verses on Click
   const loadVerse = e => {
     e.target.className = 'activeBtn';
     dispatch(getChapterNum(e.target.textContent));
     dispatch(getChapterID(e.target.id));
-    fetchData(chaptersURL(e.target.id))
-      .then(data => {
-        setVerses(getVerseNumbers(data.data.content));
-        dispatch(getVerses(data.data.content));
-      });
+    retrieveVerses(dispatch, e.target.id, setVerses);
   };
 
   // get specific verse on click but login first

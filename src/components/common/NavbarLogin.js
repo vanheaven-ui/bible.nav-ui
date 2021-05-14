@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import { removeUser } from '../../redux/actions';
 import '../../styles/Navbar.css';
 import logo from '../../images/logo1.png';
+import removeUser from '../../redux/actions/user/removeUser';
 
 const LoggedInNavbar = ({ login }) => {
   // Use useDispatch hook to send actions to redux store

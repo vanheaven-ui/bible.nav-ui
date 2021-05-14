@@ -4,25 +4,18 @@ import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ReactLoading from 'react-loading';
-import { BASE_URL, BOOKS_URL, dateOptions } from '../constants';
-import {
-  getBookName, getChapters, getCurrentUser, getFavorites,
-} from '../redux/actions';
+import { BOOKS_URL, dateOptions } from '../constants';
 import fetchData from '../services/fetchData';
 import verseOfDay from '../services/verseOfDay';
 import '../styles/home.css';
+import persistLogin from '../util';
+import retrieveChapters from '../redux/actions/chapters/chapters';
+import getBookName from '../redux/actions/bookName';
 
 const Home = ({ currentUser, login }) => {
-  // useHistory hook to route the different components
   const hist = useHistory();
-
-  // variable to manage loading
   const [isLoading, setIsLoading] = useState();
-
-  // useDispatch hook to disptach actions to the Redux store
   const dispatch = useDispatch();
-
-  // Verse of the day state variables
   const [VoD, setVoD] = useState('');
   const [ref, setRef] = useState('');
 
@@ -39,13 +32,8 @@ const Home = ({ currentUser, login }) => {
   // local storage
   const favorites = JSON.parse(localStorage.getItem('favorites'));
 
-  // useEffect hook to fetch data only once when component mounts
   useEffect(() => {
-    if (currentUser && favorites) {
-      dispatch(getCurrentUser(currentUser));
-      dispatch(getFavorites(favorites));
-      login(true);
-    }
+    persistLogin(dispatch, currentUser, favorites, login);
     setIsLoading(true);
     verseOfDay().then(data => {
       setIsLoading(false);
@@ -60,7 +48,6 @@ const Home = ({ currentUser, login }) => {
       });
   }, []);
 
-  // function to handle click event on buttons
   const handleClick = e => {
     if (e.target.name === 'new' && !showNew) {
       setShowNew(true);
@@ -79,15 +66,10 @@ const Home = ({ currentUser, login }) => {
     }
   };
 
-  // Function to fetch chapters of each book
+  // Function to get chapters of each book and dispatch them to store
   const fetchChapters = e => {
     dispatch(getBookName(e.target.name));
-    fetchData(`${BASE_URL}/books/${e.target.id}/chapters`)
-      .then(chapters => {
-        dispatch(getChapters(chapters.data));
-        setShowChapters(true);
-        hist.push(`/books/${e.target.id}`);
-      });
+    retrieveChapters(dispatch, setShowChapters, hist, e.target.id);
   };
 
   return (

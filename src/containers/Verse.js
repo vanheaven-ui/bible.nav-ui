@@ -3,22 +3,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import VerseLayout from '../components/VerseLayout';
-import { RAPID_API_BASE } from '../constants';
-import { getCurrentUser, getFavorite, getFavorites } from '../redux/actions';
 import '../styles/verse.css';
+import persistLogin from '../util';
+import fetchScripture from '../services/fetchScripture';
+import addFavoriteVerse from '../redux/actions/favorites/addFavorite';
 
 const Verse = ({ currentUser, login }) => {
-  // Get route parameters using useParams hook
   const { verse } = useParams();
   const [text, setText] = useState('');
   const dispatch = useDispatch();
   const [verseID, setVerseID] = useState(verse);
-
-  // state variables for favorites management
   const [favoriteStatus, setFavoriteStatus] = useState(false);
-
-  // stte variables to manange verse
   const [scripture, setScripture] = useState({});
+  const [isAdding, setIsAdding] = useState(false);
+
   const favorite = {
     book_name: scripture.Book,
     chapter_num: scripture.Chapter,
@@ -26,25 +24,37 @@ const Verse = ({ currentUser, login }) => {
     verse: scripture.Output,
   };
 
-  // Grab the chapterId and the data from Redux store
   const { chapterNum } = useSelector(state => state.chapterId);
   const bookName = useSelector(state => state.name);
   const { user, favorites } = useSelector(state => state.user);
   const { jwt: token, user: currUser } = user;
+  console.log(currUser);
   let userId;
   currUser ? userId = currUser.id : userId = ''; // eslint-disable-line
 
   const [isLoading, setIsLoading] = useState(false);
   const hist = useHistory();
 
+  const favortes = JSON.parse(localStorage.getItem('favorites'));
+
+  const params = {
+    verseID,
+    chapterNum,
+    bookName,
+  };
+
+  const addFavoriteParams = {
+    userId,
+    favoriteStatus,
+    token,
+    favorite,
+  };
+
+  console.log(addFavoriteParams);
+
   // Get verse chosen from external api
   useEffect(() => {
-    const favortes = JSON.parse(localStorage.getItem('favorites'));
-    if (currentUser) {
-      dispatch(getCurrentUser(currentUser));
-      dispatch(getFavorites(favortes));
-      login(true);
-    }
+    persistLogin(dispatch, currentUser, favortes, login);
 
     setIsLoading(true);
     if (favorites) {
@@ -58,66 +68,22 @@ const Verse = ({ currentUser, login }) => {
       });
     }
 
-    fetch(`${RAPID_API_BASE}?Verse=${verseID}&chapter=${chapterNum}&Book=${bookName}`, {
-      method: 'GET',
-      headers: {
-        'x-rapidapi-key': '36b571e37emshf64ca4aee9ccebcp1eeaefjsn46401cd9bc4a',
-        'x-rapidapi-host': 'ajith-holy-bible.p.rapidapi.com',
-      },
-    })
-      .then(response => response.json())
-      .then(data => {
-        setText(data.Output);
-        setScripture(data);
-        setIsLoading(false);
-      })
-      .catch(err => console.error(err));
+    fetchScripture(params, setText, setScripture, setIsLoading);
   }, []);
 
   const handleNext = e => {
+    const newVerse = parseInt(verseID, 10);
+    setVerseID((newVerse + 1).toString());
     setIsLoading(true);
     e.target.parentElement.setAttribute('style', 'cursor: not-allowed;');
-    setVerseID((parseInt(verse, 10) + 1).toString());
-    fetch(
-      `${RAPID_API_BASE}?Verse=${verseID}&chapter=${chapterNum}&Book=${bookName}`,
-      {
-        method: 'GET',
-        headers: {
-          'x-rapidapi-key': '36b571e37emshf64ca4aee9ccebcp1eeaefjsn46401cd9bc4a',
-          'x-rapidapi-host': 'ajith-holy-bible.p.rapidapi.com',
-        },
-      },
-    )
-      .then(response => response.json())
-      .then(data => {
-        setText(data.Output);
-        setScripture(data);
-        setIsLoading(false);
-      })
-      .catch(err => console.error(err));
+
+    fetchScripture(params, setText, setScripture, setIsLoading);
   };
 
   // Add to favorites on click
   const addFavorite = () => {
-    fetch(`https://biblenav-api.herokuapp.com/api/v1/users/${userId}/favorites`, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        Authorization: `${token}`,
-        credentials: 'include',
-      },
-      body: JSON.stringify(favorite),
-    })
-      .then(res => res.json())
-      .then(data => {
-        setFavoriteStatus(!favoriteStatus);
-        dispatch(getFavorite(data.favorite));
-        const arr = JSON.parse(localStorage.getItem('favorites'));
-        arr.push(data.favorite);
-        localStorage.setItem('favorites', JSON.stringify(arr));
-      })
-      .catch(err => console.log(err.message));
+    setIsAdding(true);
+    addFavoriteVerse(dispatch, addFavoriteParams, setFavoriteStatus);
   };
 
   return (
@@ -139,6 +105,7 @@ const Verse = ({ currentUser, login }) => {
           addFavorite={addFavorite}
           favoriteStatus={favoriteStatus}
           isLoading={isLoading}
+          isAdding={isAdding}
         />
       )}
     </section>
