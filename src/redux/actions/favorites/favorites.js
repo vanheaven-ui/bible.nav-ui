@@ -1,8 +1,8 @@
-import fetchFavorites from '../../services/fetchFavorites';
-import { getCurrentUser } from '../actions';
-import { GET_FAVORITES } from '../actionTypes';
+import { GET_FAVORITES } from '../../actionTypes';
+import fetchFavorites from '../../../services/fetchFavorites';
+import getCurrentUser from '../user/user';
 
-const getFavorites = favorites => ({
+export const getFavorites = favorites => ({
   type: GET_FAVORITES,
   payload: favorites,
 });
@@ -21,8 +21,7 @@ const getFavoritesOnLogin = (dispatch, loginParams, setSigningin, update, params
       if (res.ok) {
         return res.json();
       }
-      // throw Error('Username or password is invalid');
-      throw res;
+      throw Error('Username or password is invalid');
     })
     .then(data => {
       console.log(data);
@@ -33,7 +32,7 @@ const getFavoritesOnLogin = (dispatch, loginParams, setSigningin, update, params
       fetchFavorites(user.id, token)
         .then(data => {
           localStorage.setItem('favorites', JSON.stringify(data.favorites));
-          dispatch(getFavorites(JSON.parse(localStorage.getItem('favorites'))));
+          dispatch(getFavorites(JSON.parse(localStorage.getItem('favorites')).filter(el => el !== null)));
         })
         .catch(err => console.log(err.message));
       if (params.lastLocation && params.lastLocation.pathname.indexOf('books') !== -1) {
