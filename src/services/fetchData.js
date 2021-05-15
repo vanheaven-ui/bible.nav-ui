@@ -1,7 +1,7 @@
 const fetchData = url => {
   const res = fetch(url, {
     headers: {
-      'api-key': '9914cf5e73852dc9b24942666ef8d6bd',
+      'api-key': '33ca2a8f23fb5001c5a9c8ace6e0e4b7',
     },
   }).then(res => res.json());
   return res;
