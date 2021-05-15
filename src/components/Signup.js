@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import ReactLoading from 'react-loading';
 import '../styles/signup.css';
 import AlertDisimissible from './AlertDissimissible';
+import registerService from '../services/register';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -37,24 +38,7 @@ const Signup = () => {
   const handleSubmit = e => {
     e.preventDefault();
     setRegistering(true);
-    fetch('https://biblenav-api.herokuapp.com/api/v1/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(signupParams),
-    })
-      .then(res => {
-        setRegistering(false);
-        if (res.ok) {
-          hist.push('/login');
-        }
-        throw Error('Check your entry and try again');
-      })
-      .catch(err => {
-        setError(err.message);
-        setClick(true);
-      });
+    registerService(hist, setError, setClick, setRegistering, signupParams);
   };
 
   const handleClick = () => setClick(false);
