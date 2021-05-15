@@ -5,7 +5,7 @@ const getFavorite = favorite => ({
   payload: favorite,
 });
 
-const addFavoriteVerse = (dispatch, params, setFavoriteStatus) => {
+const addFavoriteVerse = (dispatch, params, setFavoriteStatus, setIsAdding) => {
   fetch(`https://biblenav-api.herokuapp.com/api/v1/users/${params.userId}/favorites`, {
     method: 'POST',
     headers: {
@@ -24,7 +24,8 @@ const addFavoriteVerse = (dispatch, params, setFavoriteStatus) => {
       arr.push(data.favorite);
       localStorage.setItem('favorites', JSON.stringify(arr));
     })
-    .catch(err => console.log(err.message));
+    .catch(err => console.log(err.message))
+    .finally(() => setIsAdding(false));
 };
 
 export default addFavoriteVerse;
