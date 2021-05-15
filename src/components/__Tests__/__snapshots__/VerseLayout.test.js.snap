@@ -34,7 +34,9 @@ exports[`VerseLayout Component does not change unexpectedly 1`] = `
     onClick={[Function]}
     type="button"
   >
-    Add to favourites
+    <span>
+       Add to favourites
+    </span>
     <i
       className="fas fa-star"
       style={

@@ -19,6 +19,7 @@ describe('VerseLayout Component', () => {
   const addFavorite = () => '';
   const favoriteStatus = false;
   const isLoading = false;
+  const isAdding = false;
 
   it('renders without crashing', () => {
     ReactDOM.render(
@@ -28,6 +29,7 @@ describe('VerseLayout Component', () => {
         addFavorite={addFavorite}
         favoriteStatus={favoriteStatus}
         isLoading={isLoading}
+        isAdding={isAdding}
       />, rootDiv(),
     );
   });
@@ -40,6 +42,7 @@ describe('VerseLayout Component', () => {
         addFavorite={addFavorite}
         favoriteStatus={favoriteStatus}
         isLoading={isLoading}
+        isAdding={isAdding}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -53,6 +56,7 @@ describe('VerseLayout Component', () => {
         addFavorite={addFavorite}
         favoriteStatus={favoriteStatus}
         isLoading={isLoading}
+        isAdding={isAdding}
       />,
     );
     expect(container.firstChild.classList.contains('verse-layout-wrap')).toBe(true);

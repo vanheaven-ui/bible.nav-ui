@@ -26,6 +26,7 @@ exports[`BookLayout Component does not change unexpectedly 1`] = `
     </h4>
      
     <button
+      className=""
       id="MRK.1"
       onClick={[Function]}
       type="button"
@@ -33,6 +34,7 @@ exports[`BookLayout Component does not change unexpectedly 1`] = `
       1
     </button>
     <button
+      className=""
       id="MRK.2"
       onClick={[Function]}
       type="button"
@@ -40,6 +42,7 @@ exports[`BookLayout Component does not change unexpectedly 1`] = `
       2
     </button>
     <button
+      className=""
       id="MRK.3"
       onClick={[Function]}
       type="button"
@@ -47,6 +50,7 @@ exports[`BookLayout Component does not change unexpectedly 1`] = `
       3
     </button>
     <button
+      className=""
       id="MRK.4"
       onClick={[Function]}
       type="button"

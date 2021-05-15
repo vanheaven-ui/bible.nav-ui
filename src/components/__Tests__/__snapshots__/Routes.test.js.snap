@@ -72,6 +72,13 @@ Array [
     <section
       className="hero"
     >
+      <p
+        className="caret"
+      >
+        <i
+          className="fas fa-angle-double-down"
+        />
+      </p>
       <div
         className="hero-text"
       >
@@ -114,7 +121,7 @@ Array [
                 className="hero-heading"
               >
                 <small>
-                  Wednesday, May 12, 2021
+                  Friday, May 14, 2021
                 </small>
                 <h4>
                   VERSE OF THE DAY:
