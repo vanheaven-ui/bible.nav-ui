@@ -1,15 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import '../../styles/Navbar.css';
 import logo from '../../images/logo1.png';
-import removeUser from '../../redux/actions/user/removeUser';
 
 const LoggedInNavbar = ({ login }) => {
-  // Use useDispatch hook to send actions to redux store
-  const dispatch = useDispatch();
-
   // Variables to toggle navbar display
   const [click, setClick] = useState();
   const { user: currUser } = useSelector(state => state.user.user);
@@ -17,7 +13,6 @@ const LoggedInNavbar = ({ login }) => {
   // function to handle login status
   const handleLogout = () => {
     localStorage.clear();
-    dispatch(removeUser);
     login(false);
   };
 
