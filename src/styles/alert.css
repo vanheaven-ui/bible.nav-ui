@@ -6,6 +6,11 @@
   display: flex;
 }
 
-.fa-exclamation-triangle {
-  font-size: 18px;
+.my-alert .heading {
+  margin-top: 0;
+  width: 100%;
+  align-items: center;
+  font-size: 24px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
 }

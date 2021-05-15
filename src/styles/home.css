@@ -58,8 +58,8 @@
 }
 
 @keyframes move {
-  from { transform: translateY(13px) }
-  to { trnasform: translateY(-13px) }
+  from { transform: translateY(13px); }
+  to { trnasform: translateY(-13px); }
 }
 
 .caret {
