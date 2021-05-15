@@ -16,6 +16,10 @@ const Verse = ({ currentUser, login }) => {
   const [favoriteStatus, setFavoriteStatus] = useState(false);
   const [scripture, setScripture] = useState({});
   const [isAdding, setIsAdding] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const hist = useHistory();
+
+  const favortes = JSON.parse(localStorage.getItem('favorites'));
 
   const favorite = {
     book_name: scripture.Book,
@@ -32,11 +36,6 @@ const Verse = ({ currentUser, login }) => {
   let userId;
   currUser ? userId = currUser.id : userId = ''; // eslint-disable-line
 
-  const [isLoading, setIsLoading] = useState(false);
-  const hist = useHistory();
-
-  const favortes = JSON.parse(localStorage.getItem('favorites'));
-
   const params = {
     verseID,
     chapterNum,
@@ -49,8 +48,6 @@ const Verse = ({ currentUser, login }) => {
     token,
     favorite,
   };
-
-  console.log(addFavoriteParams);
 
   // Get verse chosen from external api
   useEffect(() => {
@@ -83,7 +80,7 @@ const Verse = ({ currentUser, login }) => {
   // Add to favorites on click
   const addFavorite = () => {
     setIsAdding(true);
-    addFavoriteVerse(dispatch, addFavoriteParams, setFavoriteStatus);
+    addFavoriteVerse(dispatch, addFavoriteParams, setFavoriteStatus, setIsAdding);
   };
 
   return (

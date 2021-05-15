@@ -15,7 +15,6 @@ const FavoritesList = ({ currentUser, login }) => {
   const { jwt: token } = user;
 
   const { favorites: favrites } = useSelector(state => state.favorites);
-  console.log(favrites);
 
   const favorites = JSON.parse(localStorage.getItem('favorites'));
 
