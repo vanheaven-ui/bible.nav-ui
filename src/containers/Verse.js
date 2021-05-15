@@ -32,7 +32,6 @@ const Verse = ({ currentUser, login }) => {
   const bookName = useSelector(state => state.name);
   const { user, favorites } = useSelector(state => state.user);
   const { jwt: token, user: currUser } = user;
-  console.log(currUser);
   let userId;
   currUser ? userId = currUser.id : userId = ''; // eslint-disable-line
 

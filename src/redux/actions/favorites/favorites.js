@@ -8,7 +8,6 @@ export const getFavorites = favorites => ({
 });
 
 const getFavoritesOnLogin = (dispatch, loginParams, setSigningin, update, params) => {
-  console.log(params);
   fetch('https://biblenav-api.herokuapp.com/api/v1/login', {
     method: 'POST',
     headers: {
@@ -24,7 +23,6 @@ const getFavoritesOnLogin = (dispatch, loginParams, setSigningin, update, params
       throw Error('Username or password is invalid');
     })
     .then(data => {
-      console.log(data);
       update(true);
       localStorage.setItem('user', JSON.stringify(data));
       dispatch(getCurrentUser(JSON.parse(localStorage.getItem('user'))));
