@@ -37,7 +37,7 @@ export const VERSES_ARRAY = [
   { bookName: 'Isaiah', chapterNum: '40', verseNum: '31' },
   { bookName: 'Joshua', chapterNum: '1', verseNum: '9' },
   { bookName: 'Hebrews', chapterNum: '12', verseNum: '2' },
-  { bookName: 'John', chapterNum: '1', verseNum: '14' },
+  { bookName: '1 Peter', chapterNum: '5', verseNum: '7' },
   { bookName: 'Romans', chapterNum: '10', verseNum: '9' },
   { bookName: 'Phillipians', chapterNum: '2', verseNum: '3' },
   { bookName: 'Mathew', chapterNum: '5', verseNum: '45' },
