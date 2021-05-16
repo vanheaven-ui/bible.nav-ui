@@ -65,7 +65,7 @@ const Verse = ({ currentUser, login }) => {
     }
 
     fetchScripture(params, setText, setScripture, setIsLoading);
-  }, []);
+  }, [params.verseID]);
 
   const handleNext = e => {
     const newVerse = parseInt(verseID, 10);
