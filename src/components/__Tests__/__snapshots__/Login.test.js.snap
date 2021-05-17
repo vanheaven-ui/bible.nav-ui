@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Component does not change unexpectedly 1`] = `
+<section
+  className="login"
+>
+  
+  <h3
+    className="h4"
+  >
+    Login into Bible.nav and manage your favorites
+  </h3>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Username"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+      <p
+        className="show-hide"
+      >
+        <small>
+          show password
+        </small>
+         
+        <input
+          id="show-password"
+          onClick={[Function]}
+          type="checkbox"
+        />
+      </p>
+    </div>
+    <div
+      className="actions"
+    >
+      <button
+        className="block-btn"
+        type="submit"
+      >
+        Login
+      </button>
+    </div>
+  </form>
+  <div
+    className="other-action"
+  >
+    Do not have an account?
+     
+    <a
+      href="/signup"
+      onClick={[Function]}
+    >
+      Register Here
+    </a>
+  </div>
+</section>
+`;

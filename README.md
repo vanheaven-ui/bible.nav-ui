@@ -1,52 +1,81 @@
-<div align="center">
+<br />
+<p align="center">
+  <a href="https://github.com/vanheaven-ui/bible.nav-ui">
+    <img src="src/images/logo1.png" alt="Logo" width="80" height="80">
+  </a>
 
-# Create React App
+  <h3 align="center">Bible.nav</h3>
 
-A React scaffold with basic linter and Github actions configuration.
+  <p align="center">
+    A single page application to aid navigating the bible for specific verses.
+    <br />
+    <a href="https://github.com/vanheaven-ui/bible.nav-ui/pull/1"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://guarded-springs-59282.herokuapp.com/">View Demo</a>
+    ·
+    <a href="https://github.com/vanheaven-ui/bible.nav-ui/issues">Request Feature</a>
+  </p>
+</p>
 
-![Linters](https://img.shields.io/badge/%E2%9C%94%EF%B8%8FLinting-Yes-ff69b4)
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#setup">Setup</a></li>
+        <li><a href="#installation">Installations</a></li>
+        <li><a href="#run">Run</a></li>
+      </ul>
+    </li>
+    <li><a href="#author">Author</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-</div>
+## About The Project
 
-## Application Screenshot
+![Bible.nav Screen Shot](screenshot/screenshot.png)
 
-# This is space for your application screenshot
 
-## Content
+This project was completed to fulfill the final capstone requirements at [Microverse Inc](). The application in this project was built to aid navigating the bible for specific verses, an idea that was inspired by the find your house concept. The design of the application herein was inspired by [Alexey Savitskiy on Behance](https://www.behance.net/gallery/37706679/Circle-(Landing-page-Dashboard-Mobile-App)).
+The backend for this application was built with Rails and can be found [here](https://github.com/vanheaven-ui/bible.nav-api)
 
-<a text-align="center" href="#about">Background</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#ins">Installations</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#usage">Usage</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#app">App</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#with">Building</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#author">Author</a>
+### Built With
 
-## Background <a name = "about"></a>
+Below is a list of the tools used to complete this project.
+* [Bootstrap](https://react-bootstrap.github.io/)
+* [Redux](https://redux.js.org/)
+* [React](https://reactjs.org/)
 
-This template was created to eliminate the time it takes to scaffold a React application from the `npx create-react-app [App name]`. More so, instead of spending time configuring linters, this repository contains the basic linters to help keep your CSS and Javascript code in check. 
+## Getting Started
 
-## 🔧 Building<a name = "with"></a>
+To get a local copy up and running follow these simple example steps.
 
-The tools used to build the template are listed below:
+### Prerequisites
 
-- React
-- eslint
-- stylelint
+Ensure you have the following running in your local environment.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+* NodeJs
+  <br>
 
-## Usage <a name = "usage"></a>
-
-To use the code in this repository, follow the steps in this section:
-
-### 🔨 Prerequisites
-
-You should have the following packages installed on your computer inorder to run the code contained herein.
-
-- Node JS
-- npm and npx
+  [visit](https://nodejs.org/en/download/)
 
 ### 🔨 Setup
 
-First get a copy of the project on your computer:
+To get a copy of the project on your computer:
 
 - Clone or download the repository to a local directory on your computer by following the Github instructions at [Github clone/download repository](https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository).
 
@@ -59,13 +88,18 @@ Once you have a local copy of the entire project on your computer, then:
 - Open the project directory in your editor of choice. For example running `code .` will open the project in VSCode.
 - Run `npm install` to install the project dependencies in the package.json file.
 
-### Template <a name = "app"></a>
+### Application <a name = "app"></a>
 
 With the installations above complete, you are set to locally use the code. Follow these simple steps:
 
 - Run `npm start` to start webpack-dev-server.
-- If everything worked well, the browser should automatically render the calculator on `http://localhost:3000/`.
-- Now you can get building your application without waiting for ages for `create-react-app` to install all the packages.
+- If everything worked well, the browser should automatically render the application on `http://localhost:3000/`.
+
+## 🧪 Testing <a name= "tests"></a>
+
+Jest and React Testing Library were used to test the code herein.
+To run the tests, simply type:
+- `npm test` or `npm run test` in the terminal and hit enter. This will run the npm test script
 
 ## ✒️ Author <a name = "author"></a>
 

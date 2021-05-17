@@ -1,0 +1,47 @@
+.not-found {
+  height: 80vh;
+  background-image: url(../images/notfound.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  padding-right: 20px;
+  padding-top: 10px;
+  text-align: right;
+}
+
+.overlay-notfound {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(236, 82, 0, 0.5);
+  z-index: 100;
+}
+
+.not-found button {
+  z-index: 1000;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s ease;
+  background-color: #ec5200;
+  color: #fff;
+  font-weight: 700;
+  padding: 3px 12px;
+  border: none;
+  border-radius: 20px;
+}
+
+.not-found button:hover {
+  transform: translateX(-50px) scale(1.3);
+  background-color: #333;
+}
+
+@media screen and (max-width: 575px) {
+  .not-found {
+    background-size: cover;
+  }
+}

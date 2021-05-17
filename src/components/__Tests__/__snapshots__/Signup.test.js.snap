@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not change unexpectedly 1`] = `
+<section
+  className="signup"
+>
+  <h3
+    className="h4"
+  >
+    Register here to have Bible.nav priviledges
+  </h3>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Username"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Email"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+      <p
+        className="show-hide"
+      >
+        <small>
+          show password
+        </small>
+         
+        <input
+          id="show-password"
+          onClick={[Function]}
+          type="checkbox"
+        />
+      </p>
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Type password again"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="actions"
+    >
+      <button
+        className="block-btn"
+        type="submit"
+      >
+        Register
+      </button>
+    </div>
+  </form>
+  <div
+    className="other-action"
+  >
+    Already registered?
+     
+    <a
+      href="/login"
+      onClick={[Function]}
+    >
+      Login Here
+    </a>
+  </div>
+</section>
+`;

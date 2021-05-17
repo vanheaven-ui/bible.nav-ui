@@ -1,0 +1,302 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes Component does not change unexpectedly 1`] = `
+Array [
+  <div
+    className="dark-overlay"
+  />,
+  <header>
+    <nav
+      className="navbar"
+    >
+      <div
+        className="nav-container"
+      >
+        <a
+          className="brand nav-logo"
+          href="/"
+          onClick={[Function]}
+        >
+          <img
+            alt="logo"
+            height="50px"
+            src="logo1.png"
+            width="50px"
+          />
+          Bible.nav
+        </a>
+        <ul
+          className="nav-menu"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              aria-current={null}
+              className="nav-links"
+              href="/signup"
+              onClick={[Function]}
+            >
+              Signup
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              aria-current={null}
+              className="nav-links"
+              href="/login"
+              onClick={[Function]}
+            >
+              Login
+            </a>
+          </li>
+        </ul>
+        <button
+          className="nav-icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <i
+            aria-label="times"
+            className="fas fa-bars"
+          />
+        </button>
+      </div>
+    </nav>
+  </header>,
+  <div
+    className="App"
+  >
+    <section
+      className="hero"
+    >
+      <p
+        className="caret"
+      >
+        <i
+          className="fas fa-angle-double-down"
+        />
+      </p>
+      <div
+        className="hero-text"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-md-6 col-12 order-md-first order-last"
+              id="left-col"
+            >
+              <div
+                className="left-hero"
+              >
+                <h2>
+                   Navigating the Bible simplified
+                </h2>
+                <p>
+                  Your favorite bible verse is a login away
+                </p>
+                <button
+                  className="orange-button"
+                  type="button"
+                >
+                  <a
+                    href="/signup"
+                    onClick={[Function]}
+                  >
+                    START HERE
+                  </a>
+                </button>
+              </div>
+            </div>
+            <div
+              className="col-md-6 col-12 order-md-last order-first"
+            >
+              <div
+                className="hero-heading"
+              >
+                <small>
+                  Friday, May 14, 2021
+                </small>
+                <h4>
+                  VERSE OF THE DAY:
+                </h4>
+                <h2>
+                  
+                </h2>
+              </div>
+              <div
+                className="verse-section"
+              >
+                <p
+                  className="verse-of-day"
+                >
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      className="book-list"
+    >
+      <h2>
+        GET BOOKS OF THE BIBLE
+      </h2>
+      <div
+        className="container-fluid"
+        id="bible-sections"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-6 col-12"
+            id="navigate"
+          >
+            <h4>
+              Let us navigate the sections of the bible
+            </h4>
+            <i
+              className="fas fa-caret-right fa-3x right-fa"
+            />
+            <i
+              className="fas fa-caret-down fa-3x down-fa"
+            />
+          </div>
+          <div
+            className="col-md-6 col-12"
+          >
+            <button
+              name="new"
+              onClick={[Function]}
+              title="Click me!"
+              type="button"
+            >
+              NEW TESTAMENT
+            </button>
+            <button
+              name="old"
+              onClick={[Function]}
+              title="Click me!"
+              type="button"
+            >
+              OLD TESTAMENT
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      className="favorites-pitch"
+    >
+      <h3>
+        CREATE YOUR FAVORITES
+      </h3>
+      <p>
+        Have your favorites in one place by registering or signing in
+      </p>
+      <div
+        className="buttons"
+      >
+        <button
+          className="orange-button"
+          type="button"
+        >
+          <a
+            href="/signup"
+            onClick={[Function]}
+          >
+            REGISTER
+          </a>
+        </button>
+        <button
+          className="outline-btn"
+          type="button"
+        >
+          <a
+            href="/login"
+            onClick={[Function]}
+          >
+            LOGIN
+          </a>
+        </button>
+      </div>
+    </section>
+  </div>,
+  <footer
+    id="footer"
+  >
+    <div
+      className="footer-wrap"
+    >
+      <h3
+        className="footer-logo"
+      >
+        <img
+          alt="logo"
+          height="50px"
+          src="logo1.png"
+          width="50px"
+        />
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Bible.nav
+        </a>
+      </h3>
+      <p
+        className="address"
+      >
+        Plot 3, Speke Road street, Kampala Rd 3
+        <br />
+        Kampala, Uganda.
+      </p>
+      <ul
+        className="social-links"
+      >
+        <li>
+          <a
+            href="https://www.linkedin.com/in/vanheaven/"
+          >
+            <i
+              className="fab fa-linkedin"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/MworekwaE"
+          >
+            <i
+              className="fab fa-twitter-square"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/vanheaven-ui"
+          >
+            <i
+              className="fab fa-github-square"
+            />
+          </a>
+        </li>
+      </ul>
+      <p
+        className="copyright"
+      >
+        Bible.nav 2021. All rights reserved
+      </p>
+    </div>
+  </footer>,
+]
+`;

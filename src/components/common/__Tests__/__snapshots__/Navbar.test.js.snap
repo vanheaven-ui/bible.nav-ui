@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not change unexpectedly 1`] = `
+<nav
+  className="navbar"
+>
+  <div
+    className="nav-container"
+  >
+    <a
+      className="brand nav-logo"
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt="logo"
+        height="50px"
+        src="logo1.png"
+        width="50px"
+      />
+      Bible.nav
+    </a>
+    <ul
+      className="nav-menu"
+    >
+      <li
+        className="nav-item"
+      >
+        <a
+          aria-current={null}
+          className="nav-links"
+          href="/signup"
+          onClick={[Function]}
+        >
+          Signup
+        </a>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
+          aria-current={null}
+          className="nav-links"
+          href="/login"
+          onClick={[Function]}
+        >
+          Login
+        </a>
+      </li>
+    </ul>
+    <button
+      className="nav-icon"
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        aria-label="times"
+        className="fas fa-bars"
+      />
+    </button>
+  </div>
+</nav>
+`;

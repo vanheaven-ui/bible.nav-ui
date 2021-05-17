@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavbarLoggedIn Component does not change unexpectedly 1`] = `
+<nav
+  className="navbar"
+>
+  <div
+    className="nav-container"
+  >
+    <a
+      className="nav-logo"
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt="logo"
+        height="50px"
+        src="logo1.png"
+        width="50px"
+      />
+      Bible.nav
+    </a>
+    <ul
+      className="nav-menu"
+    >
+      <li
+        className="nav-item profile"
+      >
+        <span>
+          <small>
+            ~/
+          </small>
+           
+        </span>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
+          aria-current={null}
+          className="nav-links"
+          href="/favorites"
+          onClick={[Function]}
+        >
+          Favourites
+        </a>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
+          className="nav-links"
+          href="/"
+          onClick={[Function]}
+        >
+          Logout
+        </a>
+      </li>
+    </ul>
+    <button
+      className="nav-icon"
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        aria-label="times"
+        className="fas fa-bars"
+      />
+    </button>
+  </div>
+</nav>
+`;

@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookLayout Component does not change unexpectedly 1`] = `
+<div
+  className="book-details_wrap"
+>
+  <header>
+    <h2>
+      The book of
+       
+      John
+    </h2>
+    <p>
+      Enjoy the
+       
+      4
+       
+      chapters of this book. Click on each chapter number to get the verses.
+    </p>
+  </header>
+  <div
+    className="chapter-list container"
+  >
+    <h4>
+      Chapters
+    </h4>
+     
+    <button
+      className=""
+      id="MRK.1"
+      onClick={[Function]}
+      type="button"
+    >
+      1
+    </button>
+    <button
+      className=""
+      id="MRK.2"
+      onClick={[Function]}
+      type="button"
+    >
+      2
+    </button>
+    <button
+      className=""
+      id="MRK.3"
+      onClick={[Function]}
+      type="button"
+    >
+      3
+    </button>
+    <button
+      className=""
+      id="MRK.4"
+      onClick={[Function]}
+      type="button"
+    >
+      4
+    </button>
+  </div>
+  <div
+    className="verse-list container"
+  >
+    <h5>
+      Verses
+    </h5>
+     
+    <button
+      id="1"
+      onClick={[Function]}
+      type="button"
+    >
+      1
+    </button>
+    <button
+      id="2"
+      onClick={[Function]}
+      type="button"
+    >
+      2
+    </button>
+    <button
+      id="3"
+      onClick={[Function]}
+      type="button"
+    >
+      3
+    </button>
+    <button
+      id="4"
+      onClick={[Function]}
+      type="button"
+    >
+      4
+    </button>
+  </div>
+</div>
+`;

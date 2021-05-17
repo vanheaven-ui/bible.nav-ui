@@ -1,0 +1,67 @@
+.verse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  min-height: 80vh;
+  text-align: center;
+}
+
+.move {
+  position: absolute;
+  right: -10px;
+  top: 20%;
+  color: #444;
+  font-size: 22px;
+  transition: all 0.5s ease;
+  background-color: transparent;
+}
+
+.move:hover {
+  color: #ec5200;
+}
+
+.verse-layout-wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.verse-layout-wrap div {
+  background-color: #fff;
+  padding: 30px;
+  width: 80%;
+  border-radius: 10px;
+  color: #666;
+  font-weight: 500;
+  margin: 30px auto;
+  position: relative;
+  text-align: left;
+}
+
+.verse div span {
+  color: #000;
+  font-weight: 600;
+}
+
+.verse button {
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  color: #ec5200;
+  font-weight: 700;
+}
+
+.verse-go {
+  color: #fff;
+}
+
+.verse button:hover {
+  background-color: #ec5200;
+  color: #fff;
+}
+
+@media screen and (max-width: 575px) {
+  .verse-layout-wrap div {
+    padding: 10px;
+  }
+}
