@@ -117,54 +117,54 @@ const Home = ({ currentUser, login }) => {
               </Col>
               <Col xs={12} md={6}>
                 { !showOld && (
-                <button
-                  type="button"
-                  name="new"
-                  onClick={e => handleClick(e)}
-                  title="Click me!"
-                >
-                  NEW TESTAMENT
-                </button>
+                  <button
+                    type="button"
+                    name="new"
+                    onClick={e => handleClick(e)}
+                    title="Click me!"
+                  >
+                    NEW TESTAMENT
+                  </button>
                 )}
                 { !showNew && (
-                <button
-                  type="button"
-                  name="old"
-                  onClick={e => handleClick(e)}
-                  title="Click me!"
-                >
-                  OLD TESTAMENT
-                </button>
+                  <button
+                    type="button"
+                    name="old"
+                    onClick={e => handleClick(e)}
+                    title="Click me!"
+                  >
+                    OLD TESTAMENT
+                  </button>
                 )}
                 { showNew && (
-                <div className="new">
-                  { newTestament.length > 0 && newTestament.map(book => (
-                    <button
-                      name={book.name}
-                      type="button"
-                      id={book.id}
-                      key={book.id}
-                      onClick={e => fetchChapters(e)}
-                    >
-                      {book.name}
-                    </button>
-                  ))}
-                </div>
+                  <div className="new">
+                    { newTestament.length > 0 && newTestament.map(book => (
+                      <button
+                        name={book.name}
+                        type="button"
+                        id={book.id}
+                        key={book.id}
+                        onClick={e => fetchChapters(e)}
+                      >
+                        {book.name}
+                      </button>
+                    ))}
+                  </div>
                 )}
                 { showOld && (
-                <div className="old">
-                  { oldTestament.length > 0 && oldTestament.map(book => (
-                    <button
-                      name={book.name}
-                      type="button"
-                      id={book.id}
-                      key={book.id}
-                      onClick={e => fetchChapters(e)}
-                    >
-                      {book.name}
-                    </button>
-                  ))}
-                </div>
+                  <div className="old">
+                    { oldTestament.length > 0 && oldTestament.map(book => (
+                      <button
+                        name={book.name}
+                        type="button"
+                        id={book.id}
+                        key={book.id}
+                        onClick={e => fetchChapters(e)}
+                      >
+                        {book.name}
+                      </button>
+                    ))}
+                  </div>
                 )}
               </Col>
             </Row>

@@ -31,10 +31,10 @@ const Routes = () => {
             <Home currentUser={currUser} login={setLoggedIn} />
           </Route>
           <Route path="/signup">
-            <Signup />
+            <Signup currentUser={currUser} login={setLoggedIn} status={loggedIn} />
           </Route>
           <Route path="/login">
-            <Login update={setLoggedIn} />
+            <Login update={setLoggedIn} login={loggedIn} />
           </Route>
           <Route exact path="/books/:id">
             <Book currentUser={currUser} login={setLoggedIn} />

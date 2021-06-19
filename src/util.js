@@ -9,4 +9,10 @@ const persistLogin = (dispatch, currentUser, favorites, login) => {
   }
 };
 
+export const loggedInNotice = () => (
+  <div className="logged-in">
+    You are actually logged in!
+  </div>
+);
+
 export default persistLogin;
